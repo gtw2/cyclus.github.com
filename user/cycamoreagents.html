@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.0-162-gf18c1af)',
+        VERSION:     '(1.5.0-374-gdaba7e1)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -121,15 +121,15 @@ no more material.</p>
 <tr class="field-even field"><th class="field-name">outrecipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, optional (default=&#8221;&#8221;), shape=[-1]</p>
 <p>Name of composition recipe that this source provides regardless of requested composition. If empty, source creates and provides whatever compositions are requested.</p>
 <p><strong>XML:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;outrecipe&gt;</span>[recipe]<span class="nt">&lt;/outrecipe&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;outrecipe&gt;</span>[outrecipe]<span class="nt">&lt;/outrecipe&gt;</span>
 </pre></div>
 </div>
 <p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;outrecipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># recipe</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;outrecipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># outrecipe</span>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;outrecipe&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># recipe, optional</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;outrecipe&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># outrecipe, optional</span>
 </pre></div>
 </div>
 </td>
@@ -265,7 +265,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">in_commod_prefs:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>preferences for each of the given commodities, in the same order.Defauts to 1 if unspecified</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -304,15 +304,15 @@ specified commodities.</div></blockquote>
 <tr class="field-even field"><th class="field-name">recipe_name:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, optional (default=&#8221;&#8221;), shape=[-1]</p>
 <p>name of recipe to use for material requests, where the default (empty string) is to accept everything</p>
 <p><strong>XML:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;recipe_name&gt;</span>[recipe]<span class="nt">&lt;/recipe_name&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;recipe_name&gt;</span>[inrecipe]<span class="nt">&lt;/recipe_name&gt;</span>
 </pre></div>
 </div>
 <p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;recipe_name&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># recipe</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;recipe_name&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># inrecipe</span>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;recipe_name&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># recipe, optional</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;recipe_name&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># inrecipe, optional</span>
 </pre></div>
 </div>
 </td>
@@ -448,15 +448,15 @@ specified commodities.</div></blockquote>
 <tr class="field-even field"><th class="field-name">feed_recipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, shape=[-1]</p>
 <p>recipe for enrichment facility feed commodity</p>
 <p><strong>XML:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;feed_recipe&gt;</span>[recipe]<span class="nt">&lt;/feed_recipe&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;feed_recipe&gt;</span>[inrecipe]<span class="nt">&lt;/feed_recipe&gt;</span>
 </pre></div>
 </div>
 <p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;feed_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&lt;required&gt;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># recipe</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;feed_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&lt;required&gt;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># inrecipe</span>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;feed_recipe&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>  <span class="c1"># recipe, required</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;feed_recipe&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>  <span class="c1"># inrecipe, required</span>
 </pre></div>
 </div>
 </td>
@@ -495,6 +495,14 @@ specified commodities.</div></blockquote>
 </tr>
 <tr class="field-odd field"><th class="field-name">tails_assay:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=0.003), shape=[-1]</p>
 <p>tails assay from the enrichment process</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">range:</th><td class="field-body">[0.0, 0.003]</td>
+</tr>
+</tbody>
+</table>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;tails_assay&gt;</span>[double]<span class="nt">&lt;/tails_assay&gt;</span>
 </pre></div>
@@ -526,7 +534,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">max_feed_inventory:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=1e+299), shape=[-1]</p>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=1e+299), shape=[-1]</p>
 <p>maximum total inventory of natural uranium in the enrichment facility (kg)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -558,6 +566,8 @@ specified commodities.</div></blockquote>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">schema:</th><td class="field-body">&lt;optional&gt;          &lt;element name=&#8221;max_enrich&#8221;&gt;              &lt;data type=&#8221;double&#8221;&gt;                  &lt;param name=&#8221;minInclusive&#8221;&gt;0&lt;/param&gt;                  &lt;param name=&#8221;maxInclusive&#8221;&gt;1&lt;/param&gt;              &lt;/data&gt;          &lt;/element&gt;      &lt;/optional&gt;</td>
 </tr>
+<tr class="field-even field"><th class="field-name">range:</th><td class="field-body">[0.0, 1.0]</td>
+</tr>
 </tbody>
 </table>
 <p><strong>XML:</strong></p>
@@ -574,7 +584,7 @@ specified commodities.</div></blockquote>
 </div>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">order_prefs:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">bool</span></code>, optional (default=1), shape=[-1]</p>
+<tr class="field-odd field"><th class="field-name">order_prefs:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">bool</span></code>, optional (default=1), shape=[-1]</p>
 <p>turn on preference ordering for input material so that EF chooses higher U235 content first</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -734,8 +744,8 @@ specified commodities.</div></blockquote>
 <p>Fresh fuel recipes to request for each of the given fuel input commodities (same order).</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;fuel_inrecipes&gt;</span>
-  <span class="nt">&lt;val&gt;</span>[recipe]<span class="nt">&lt;/val&gt;</span>
-  <span class="nt">&lt;val&gt;</span>[recipe]<span class="nt">&lt;/val&gt;</span>
+  <span class="nt">&lt;val&gt;</span>[inrecipe]<span class="nt">&lt;/val&gt;</span>
+  <span class="nt">&lt;val&gt;</span>[inrecipe]<span class="nt">&lt;/val&gt;</span>
   ...
 <span class="nt">&lt;/fuel_inrecipes&gt;</span>
 </pre></div>
@@ -787,7 +797,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">fuel_outcommods:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, shape=[-1, -1]</p>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, shape=[-1, -1]</p>
 <p>Output commodities on which to offer spent fuel originally received as each particular input commodity (same order).</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;fuel_outcommods&gt;</span>
@@ -816,12 +826,12 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">fuel_outrecipes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, shape=[-1, -1]</p>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, shape=[-1, -1]</p>
 <p>Spent fuel recipes corresponding to the given fuel input commodities (same order). Fuel received via a particular input commodity is transmuted to the recipe specified here after being burned during a cycle.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;fuel_outrecipes&gt;</span>
-  <span class="nt">&lt;val&gt;</span>[recipe]<span class="nt">&lt;/val&gt;</span>
-  <span class="nt">&lt;val&gt;</span>[recipe]<span class="nt">&lt;/val&gt;</span>
+  <span class="nt">&lt;val&gt;</span>[outrecipe]<span class="nt">&lt;/val&gt;</span>
+  <span class="nt">&lt;val&gt;</span>[outrecipe]<span class="nt">&lt;/val&gt;</span>
   ...
 <span class="nt">&lt;/fuel_outrecipes&gt;</span>
 </pre></div>
@@ -845,7 +855,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">recipe_change_times:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>A time step on which to change the input-output recipe pair for a requested fresh fuel.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;recipe_change_times&gt;</span>
@@ -874,7 +884,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">recipe_change_commods:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>The input commodity indicating fresh fuel for which recipes will be changed. Same order as and direct correspondence to the specified recipe change times.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;recipe_change_commods&gt;</span>
@@ -903,12 +913,12 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">recipe_change_in:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>The new input recipe to use for this recipe change. Same order as and direct correspondence to the specified recipe change times.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;recipe_change_in&gt;</span>
-  <span class="nt">&lt;val&gt;</span>[recipe]<span class="nt">&lt;/val&gt;</span>
-  <span class="nt">&lt;val&gt;</span>[recipe]<span class="nt">&lt;/val&gt;</span>
+  <span class="nt">&lt;val&gt;</span>[inrecipe]<span class="nt">&lt;/val&gt;</span>
+  <span class="nt">&lt;val&gt;</span>[inrecipe]<span class="nt">&lt;/val&gt;</span>
   ...
 <span class="nt">&lt;/recipe_change_in&gt;</span>
 </pre></div>
@@ -932,12 +942,12 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">recipe_change_out:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>The new output recipe to use for this recipe change. Same order as and direct correspondence to the specified recipe change times.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;recipe_change_out&gt;</span>
-  <span class="nt">&lt;val&gt;</span>[recipe]<span class="nt">&lt;/val&gt;</span>
-  <span class="nt">&lt;val&gt;</span>[recipe]<span class="nt">&lt;/val&gt;</span>
+  <span class="nt">&lt;val&gt;</span>[outrecipe]<span class="nt">&lt;/val&gt;</span>
+  <span class="nt">&lt;val&gt;</span>[outrecipe]<span class="nt">&lt;/val&gt;</span>
   ...
 <span class="nt">&lt;/recipe_change_out&gt;</span>
 </pre></div>
@@ -962,6 +972,14 @@ specified commodities.</div></blockquote>
 </tr>
 <tr class="field-even field"><th class="field-name">assem_size:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, shape=[-1]</p>
 <p>Mass (kg) of a single assembly.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">range:</th><td class="field-body">[1.0, 100000.0]</td>
+</tr>
+</tbody>
+</table>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;assem_size&gt;</span>[double ( kg )]<span class="nt">&lt;/assem_size&gt;</span>
 </pre></div>
@@ -976,7 +994,7 @@ specified commodities.</div></blockquote>
 </div>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">n_assem_batch:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, shape=[-1]</p>
+<tr class="field-even field"><th class="field-name">n_assem_batch:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, shape=[-1]</p>
 <p>Number of assemblies that constitute a single batch.  This is the number of assemblies discharged from the core fully burned each cycle.Batch size is equivalent to <code class="docutils literal"><span class="pre">n_assem_batch</span> <span class="pre">/</span> <span class="pre">n_assem_core</span></code>.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;n_assem_batch&gt;</span>[int]<span class="nt">&lt;/n_assem_batch&gt;</span>
@@ -992,24 +1010,40 @@ specified commodities.</div></blockquote>
 </div>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">n_assem_core:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, shape=[-1]</p>
+<tr class="field-odd field"><th class="field-name">n_assem_core:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, optional (default=3), shape=[-1]</p>
 <p>Number of assemblies that constitute a full core.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">range:</th><td class="field-body">[1, 3]</td>
+</tr>
+</tbody>
+</table>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;n_assem_core&gt;</span>[int]<span class="nt">&lt;/n_assem_core&gt;</span>
 </pre></div>
 </div>
 <p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;n_assem_core&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&lt;required&gt;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># int</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;n_assem_core&quot;</span><span class="p p-Indicator">:</span> <span class="nv">3</span><span class="p p-Indicator">}</span>  <span class="c1"># int</span>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;n_assem_core&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>  <span class="c1"># int, required</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;n_assem_core&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>  <span class="c1"># int, optional</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">n_assem_fresh:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, optional (default=0), shape=[-1]</p>
+<tr class="field-even field"><th class="field-name">n_assem_fresh:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, optional (default=0), shape=[-1]</p>
 <p>Number of fresh fuel assemblies to keep on-hand if possible.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">range:</th><td class="field-body">[0, 3]</td>
+</tr>
+</tbody>
+</table>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;n_assem_fresh&gt;</span>[int ( assemblies )]<span class="nt">&lt;/n_assem_fresh&gt;</span>
 </pre></div>
@@ -1026,6 +1060,14 @@ specified commodities.</div></blockquote>
 </tr>
 <tr class="field-even field"><th class="field-name">n_assem_spent:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, optional (default=1000000000), shape=[-1]</p>
 <p>Number of spent fuel assemblies that can be stored on-site before reactor operation stalls.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">range:</th><td class="field-body">[0, 1000000000]</td>
+</tr>
+</tbody>
+</table>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;n_assem_spent&gt;</span>[int ( assemblies )]<span class="nt">&lt;/n_assem_spent&gt;</span>
 </pre></div>
@@ -1040,39 +1082,39 @@ specified commodities.</div></blockquote>
 </div>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">cycle_time:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, shape=[-1]</p>
+<tr class="field-even field"><th class="field-name">cycle_time:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, optional (default=18), shape=[-1]</p>
 <p>The duration of a full operational cycle (excluding refueling time) in time steps.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cycle_time&gt;</span>[int ( time steps )]<span class="nt">&lt;/cycle_time&gt;</span>
 </pre></div>
 </div>
 <p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;cycle_time&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&lt;required&gt;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># int, time steps</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;cycle_time&quot;</span><span class="p p-Indicator">:</span> <span class="nv">18</span><span class="p p-Indicator">}</span>  <span class="c1"># int, time steps</span>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;cycle_time&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>  <span class="c1"># int, time steps, required</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;cycle_time&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">}</span>  <span class="c1"># int, time steps, optional</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">refuel_time:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, shape=[-1]</p>
+<tr class="field-odd field"><th class="field-name">refuel_time:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, optional (default=1), shape=[-1]</p>
 <p>The duration of a full refueling period - the minimum time between the end of a cycle and the start of the next cycle.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;refuel_time&gt;</span>[int ( time steps )]<span class="nt">&lt;/refuel_time&gt;</span>
 </pre></div>
 </div>
 <p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;refuel_time&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&lt;required&gt;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># int, time steps</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;refuel_time&quot;</span><span class="p p-Indicator">:</span> <span class="nv">1</span><span class="p p-Indicator">}</span>  <span class="c1"># int, time steps</span>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;refuel_time&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>  <span class="c1"># int, time steps, required</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;refuel_time&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>  <span class="c1"># int, time steps, optional</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">cycle_step:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, optional (default=0), shape=[-1]</p>
+<tr class="field-even field"><th class="field-name">cycle_step:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">int</span></code>, optional (default=0), shape=[-1]</p>
 <p>Number of time steps since the start of the last cycle. Only set this if you know what you are doing</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cycle_step&gt;</span>[int ( time steps )]<span class="nt">&lt;/cycle_step&gt;</span>
@@ -1088,8 +1130,16 @@ specified commodities.</div></blockquote>
 </div>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">power_cap:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=0), shape=[-1]</p>
+<tr class="field-odd field"><th class="field-name">power_cap:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=0), shape=[-1]</p>
 <p>Amount of electrical power the facility produces when operating normally.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">range:</th><td class="field-body">[0.0, 2000.0]</td>
+</tr>
+</tbody>
+</table>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;power_cap&gt;</span>[double ( MWe )]<span class="nt">&lt;/power_cap&gt;</span>
 </pre></div>
@@ -1104,7 +1154,7 @@ specified commodities.</div></blockquote>
 </div>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">power_name:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, optional (default=&#8221;power&#8221;), shape=[-1]</p>
+<tr class="field-even field"><th class="field-name">power_name:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, optional (default=&#8221;power&#8221;), shape=[-1]</p>
 <p>The name of the &#8216;power&#8217; commodity used in conjunction with a deployment curve.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;power_name&gt;</span>[string]<span class="nt">&lt;/power_name&gt;</span>
@@ -1120,8 +1170,8 @@ specified commodities.</div></blockquote>
 </div>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">pref_change_times:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-odd field"><th class="field-name" colspan="2">pref_change_times:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;int&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>A time step on which to change the request preference for a particular fresh fuel type.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;pref_change_times&gt;</span>
@@ -1149,8 +1199,8 @@ specified commodities.</div></blockquote>
 </div>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">pref_change_commods:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-even field"><th class="field-name" colspan="2">pref_change_commods:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;std::string&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>The input commodity for a particular fuel preference change.  Same order as and direct correspondence to the specified preference change times.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;pref_change_commods&gt;</span>
@@ -1178,8 +1228,8 @@ specified commodities.</div></blockquote>
 </div>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">pref_change_values:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-odd field"><th class="field-name" colspan="2">pref_change_values:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>The new/changed request preference for a particular fresh fuel. Same order as and direct correspondence to the specified preference change times.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;pref_change_values&gt;</span>
@@ -1302,9 +1352,11 @@ specified commodities.</div></blockquote>
     <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;n_assem_batch&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/element&gt;</span>
-    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;n_assem_core&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;optional&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;n_assem_core&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;/optional&gt;</span>
     <span class="nt">&lt;optional&gt;</span>
         <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;n_assem_fresh&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">/&gt;</span>
@@ -1315,12 +1367,16 @@ specified commodities.</div></blockquote>
             <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/element&gt;</span>
     <span class="nt">&lt;/optional&gt;</span>
-    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;cycle_time&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/element&gt;</span>
-    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;refuel_time&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;optional&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;cycle_time&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;/optional&gt;</span>
+    <span class="nt">&lt;optional&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;refuel_time&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;/optional&gt;</span>
     <span class="nt">&lt;optional&gt;</span>
         <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;cycle_step&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">/&gt;</span>
@@ -1409,7 +1465,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">feed_commod_prefs:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>Feed commodity request preferences for each of the given feed commodities (same order). If unspecified, default is to use 1.0 for all preferences.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;feed_commod_prefs&gt;</span>
@@ -1440,15 +1496,15 @@ specified commodities.</div></blockquote>
 <tr class="field-odd field"><th class="field-name">feed_recipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, optional (default=&#8221;&#8221;), shape=[-1]</p>
 <p>Name for recipe to be used in feed requests. Empty string results in use of a dummy recipe.</p>
 <p><strong>XML:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;feed_recipe&gt;</span>[recipe]<span class="nt">&lt;/feed_recipe&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;feed_recipe&gt;</span>[inrecipe]<span class="nt">&lt;/feed_recipe&gt;</span>
 </pre></div>
 </div>
 <p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;feed_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># recipe</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;feed_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># inrecipe</span>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;feed_recipe&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># recipe, optional</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;feed_recipe&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># inrecipe, optional</span>
 </pre></div>
 </div>
 </td>
@@ -1494,7 +1550,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">leftover_commod:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, optional (default=&#8221;default-waste-stream&#8221;), shape=[-1]</p>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, optional (default=&#8221;default-waste-stream&#8221;), shape=[-1]</p>
 <p>Commodity on which to trade the leftover separated material stream. This MUST NOT be the same as any commodity used to define the other separations streams.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;leftover_commod&gt;</span>[outcommodity]<span class="nt">&lt;/leftover_commod&gt;</span>
@@ -1511,7 +1567,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">leftoverbuf_size:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=1e+299), shape=[-1]</p>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=1e+299), shape=[-1]</p>
 <p>Maximum amount of leftover separated material (not included in any other stream) that can be stored. If full, the facility halts operation until space becomes available.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1794,7 +1850,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">fill_commod_prefs:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>Filler stream commodity request preferences for each of the given filler commodities (same order). If unspecified, default is to use 1.0 for all preferences.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;fill_commod_prefs&gt;</span>
@@ -1825,15 +1881,15 @@ specified commodities.</div></blockquote>
 <tr class="field-odd field"><th class="field-name">fill_recipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, shape=[-1]</p>
 <p>Name of recipe to be used in filler material stream requests.</p>
 <p><strong>XML:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;fill_recipe&gt;</span>[recipe]<span class="nt">&lt;/fill_recipe&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;fill_recipe&gt;</span>[inrecipe]<span class="nt">&lt;/fill_recipe&gt;</span>
 </pre></div>
 </div>
 <p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;fill_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&lt;required&gt;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># recipe</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;fill_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&lt;required&gt;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># inrecipe</span>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;fill_recipe&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>  <span class="c1"># recipe, required</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;fill_recipe&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>  <span class="c1"># inrecipe, required</span>
 </pre></div>
 </div>
 </td>
@@ -1883,7 +1939,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">fiss_commod_prefs:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>Fissile stream commodity request preferences for each of the given fissile commodities (same order). If unspecified, default is to use 1.0 for all preferences.</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;fiss_commod_prefs&gt;</span>
@@ -1914,15 +1970,15 @@ specified commodities.</div></blockquote>
 <tr class="field-odd field"><th class="field-name">fiss_recipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, optional (default=&#8221;&#8221;), shape=[-1]</p>
 <p>Name for recipe to be used in fissile stream requests. Empty string results in use of an empty dummy recipe.</p>
 <p><strong>XML:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;fiss_recipe&gt;</span>[recipe]<span class="nt">&lt;/fiss_recipe&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;fiss_recipe&gt;</span>[inrecipe]<span class="nt">&lt;/fiss_recipe&gt;</span>
 </pre></div>
 </div>
 <p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;fiss_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># recipe</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;fiss_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># inrecipe</span>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;fiss_recipe&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># recipe, optional</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;fiss_recipe&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># inrecipe, optional</span>
 </pre></div>
 </div>
 </td>
@@ -1978,15 +2034,15 @@ specified commodities.</div></blockquote>
 <tr class="field-odd field"><th class="field-name">topup_recipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, optional (default=&#8221;&#8221;), shape=[-1]</p>
 <p>Name of recipe to be used in top-up material stream requests. This MUST be set if &#8216;topup_size &gt; 0&#8217;.</p>
 <p><strong>XML:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;topup_recipe&gt;</span>[recipe]<span class="nt">&lt;/topup_recipe&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;topup_recipe&gt;</span>[inrecipe]<span class="nt">&lt;/topup_recipe&gt;</span>
 </pre></div>
 </div>
 <p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;topup_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># recipe</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;topup_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># inrecipe</span>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;topup_recipe&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># recipe, optional</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;topup_recipe&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># inrecipe, optional</span>
 </pre></div>
 </div>
 </td>
@@ -2208,7 +2264,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">in_commod_prefs:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::vector&lt;double&gt;</span></code>, optional (default=[]), shape=[-1, -1]</p>
 <p>preferences for each of the given commodities, in the same order.Defauts to 1 if unspecified</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2275,15 +2331,15 @@ specified commodities.</div></blockquote>
 <tr class="field-odd field"><th class="field-name">in_recipe:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">std::string</span></code>, optional (default=&#8221;&#8221;), shape=[-1]</p>
 <p>recipe accepted by this facility, if unspecified a dummy recipe is used</p>
 <p><strong>XML:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;in_recipe&gt;</span>[recipe]<span class="nt">&lt;/in_recipe&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;in_recipe&gt;</span>[inrecipe]<span class="nt">&lt;/in_recipe&gt;</span>
 </pre></div>
 </div>
 <p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;in_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># recipe</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;in_recipe&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;&quot;</span><span class="p p-Indicator">}</span>  <span class="c1"># inrecipe</span>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;in_recipe&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># recipe, optional</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;in_recipe&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>  <span class="c1"># inrecipe, optional</span>
 </pre></div>
 </div>
 </td>
@@ -2361,7 +2417,7 @@ specified commodities.</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">discrete_handling:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">bool</span></code>, optional (default=False), shape=[-1]</p>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">bool</span></code>, optional (default=False), shape=[-1]</p>
 <p>Determines if Storage will divide resource objects. Only controls material handling within this facility, has no effect on DRE material handling. If true, batches are handled as discrete quanta, neither split nor combined. Otherwise, batches may be divided during processing. Default to false (continuous))</p>
 <p><strong>XML:</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;discrete_handling&gt;</span>[boolean]<span class="nt">&lt;/discrete_handling&gt;</span>
@@ -3342,7 +3398,7 @@ specified commodities.</div></blockquote>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Feb 13, 2017.
+      Last updated on Apr 27, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");
