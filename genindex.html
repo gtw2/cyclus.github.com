@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '(1.5.0-374-gdaba7e1)',
+        VERSION:     '(1.5.0-560-g72fa4e36)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -29,6 +29,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/cloud.base.js"></script>
     <script type="text/javascript" src="_static/cloud.js"></script>
     <link rel="shortcut icon" href="_static/big_c.ico"/>
     <link rel="index" title="Index" href="#" />
@@ -156,6 +157,8 @@ if(ga_enabled){
       <li><a href="python/simstate.html#cyclus.simstate.SimState.action_queue">action_queue (cyclus.simstate.SimState attribute)</a>
 </li>
       <li><a href="user/cymetric/api/metrics.html#cymetric.metrics.activity">activity (in module cymetric.metrics)</a>
+</li>
+      <li><a href="user/cymetric/api/tools.html#cymetric.tools.add_missing_time_step">add_missing_time_step() (in module cymetric.tools)</a>
 </li>
       <li><a href="python/lib.html#cyclus.lib.Datum.add_val">add_val() (cyclus.lib.Datum method)</a>
 </li>
@@ -2039,6 +2042,8 @@ if(ga_enabled){
         <li><a href="python/memback.html#cyclus.memback.MemBack.flush">(cyclus.memback.MemBack method)</a>
 </li>
       </ul></li>
+      <li><a href="user/cymetric/api/tools.html#cymetric.tools.format_nucs">format_nucs() (in module cymetric.tools)</a>
+</li>
       <li><a href="python/lib.html#cyclus.lib.InfileTree.from_parser">from_parser() (cyclus.lib.InfileTree method)</a>
 </li>
       <li><a href="basics/glossary.html#term-fuel-cycle-simulator"><strong>fuel cycle simulator</strong></a>
@@ -3711,10 +3716,10 @@ if(ga_enabled){
 </li>
       <li><a href="user/cymetric/api/metrics.html#cymetric.metrics.materials">materials (in module cymetric.metrics)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="python/typesystem.html#cyclus.typesystem.MaterialTrade">MaterialTrade (class in cyclus.typesystem)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="python/pyagents.html#cyclus.pyagents.Sink.max_inv_size">max_inv_size (cyclus.pyagents.Sink attribute)</a>
 </li>
       <li><a href="python/nucname.html#cyclus.nucname.mcnp">mcnp() (in module cyclus.nucname)</a>
@@ -3722,6 +3727,8 @@ if(ga_enabled){
       <li><a href="python/nucname.html#cyclus.nucname.mcnp_to_id">mcnp_to_id() (in module cyclus.nucname)</a>
 </li>
       <li><a href="python/memback.html#cyclus.memback.MemBack">MemBack (class in cyclus.memback)</a>
+</li>
+      <li><a href="user/cymetric/api/tools.html#cymetric.tools.merge">merge() (in module cymetric.tools)</a>
 </li>
       <li><a href="user/cymetric/api/tools.html#cymetric.tools.merge_and_fillna_col">merge_and_fillna_col() (in module cymetric.tools)</a>
 </li>
@@ -4375,6 +4382,8 @@ if(ga_enabled){
         <li><a href="python/typesystem.html#cyclus.typesystem.ProductTrade.price">(cyclus.typesystem.ProductTrade attribute)</a>
 </li>
       </ul></li>
+      <li><a href="python/main.html#cyclus.main.print_master_schema">print_master_schema() (in module cyclus.main)</a>
+</li>
       <li><a href="python/typesystem.html#cyclus.typesystem.Product">Product (class in cyclus.typesystem)</a>
 </li>
       <li><a href="python/typesystem.html#cyclus.typesystem.ProductBid">ProductBid (class in cyclus.typesystem)</a>
@@ -4507,6 +4516,8 @@ if(ga_enabled){
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="user/cymetric/api/tools.html#cymetric.tools.raise_no_graphviz">raise_no_graphviz() (in module cymetric.tools)</a>
+</li>
       <li><a href="user/cymetric/api/tools.html#cymetric.tools.raise_no_pyne">raise_no_pyne() (in module cymetric.tools)</a>
 </li>
       <li><a href="python/typesystem.html#cyclus.typesystem.Blob.range">range (cyclus.typesystem.Blob attribute)</a>
@@ -4727,9 +4738,11 @@ if(ga_enabled){
         <li><a href="python/typesystem.html#cyclus.typesystem.Resource.record">(cyclus.typesystem.Resource method)</a>
 </li>
       </ul></li>
+      <li><a href="python/lib.html#cyclus.lib.Recorder">Recorder (class in cyclus.lib)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="python/lib.html#cyclus.lib.Recorder">Recorder (class in cyclus.lib)</a>
+      <li><a href="user/cymetric/api/tools.html#cymetric.tools.reduce">reduce() (in module cymetric.tools)</a>
 </li>
       <li><a href="python/cycpp.html#cyclus.cycpp.AccessFilter.regex">regex (cyclus.cycpp.AccessFilter attribute)</a>
 
@@ -4940,6 +4953,8 @@ if(ga_enabled){
 </li>
       </ul></li>
       <li><a href="python/lib.html#cyclus.lib.Env.rng_schema">rng_schema() (cyclus.lib.Env method)</a>
+</li>
+      <li><a href="python/main.html#cyclus.main.RngPrint">RngPrint (class in cyclus.main)</a>
 </li>
       <li><a href="python/main.html#cyclus.main.RngSchema">RngSchema (class in cyclus.main)</a>
 </li>
@@ -8086,7 +8101,7 @@ if(ga_enabled){
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Apr 27, 2017.
+      Last updated on Aug 30, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

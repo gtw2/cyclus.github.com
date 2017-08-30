@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.0-374-gdaba7e1)',
+        VERSION:     '(1.5.0-560-g72fa4e36)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,6 +28,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
     <script type="text/javascript" src="../_static/cloud.js"></script>
     <link rel="shortcut icon" href="../_static/big_c.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -82,7 +83,7 @@ if(ga_enabled){
 <p>Tools for representing and driving the simulation.</p>
 <dl class="class">
 <dt id="cyclus.simstate.SimState">
-<em class="property">class </em><code class="descclassname">cyclus.simstate.</code><code class="descname">SimState</code><span class="sig-paren">(</span><em>input_file=None</em>, <em>input_format=None</em>, <em>output_path=None</em>, <em>memory_backend=False</em>, <em>registry=True</em>, <em>schema_path=None</em>, <em>flat_schema=False</em>, <em>frequency=0.001</em>, <em>repeating_actions=None</em>, <em>heartbeat_frequency=5</em>, <em>debug=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cyclus.simstate.SimState" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">cyclus.simstate.</code><code class="descname">SimState</code><span class="sig-paren">(</span><em>input_file=None</em>, <em>input_format=None</em>, <em>output_path=None</em>, <em>memory_backend=False</em>, <em>registry=True</em>, <em>schema_path=None</em>, <em>flat_schema=False</em>, <em>frequency=0.001</em>, <em>repeating_actions=None</em>, <em>heartbeat_frequency=5</em>, <em>debug=False</em>, <em>print_ms=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cyclus.simstate.SimState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class that represents and drives the simulation state.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -349,7 +350,7 @@ the process.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Apr 27, 2017.
+      Last updated on Aug 30, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

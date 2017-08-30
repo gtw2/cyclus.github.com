@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.0-374-gdaba7e1)',
+        VERSION:     '(1.5.0-560-g72fa4e36)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,6 +28,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
     <script type="text/javascript" src="../_static/cloud.js"></script>
     <link rel="shortcut icon" href="../_static/big_c.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -196,6 +197,11 @@ You need to add <code class="docutils literal"><span class="pre">~/.local/bin</s
 </pre></div>
 </div>
 <p>If you were successful then Cyclus has been installed and you can skip down to Installing Cycamore!</p>
+<p>If you received an error message concerning the Cyclus Core Version, please use:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>python install.py --core-version<span class="o">=</span>x.y.z
+</pre></div>
+</div>
+<p>Replace x.y.z with the Cyclus version number you are installing.</p>
 <p>Alternative instructions are also available for doing a <a class="reference internal" href="install_custom.html"><span class="doc">Custom Installation</span></a>.</p>
 </div>
 </div>
@@ -395,7 +401,7 @@ $ cycamore_unit_tests
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Apr 27, 2017.
+      Last updated on Aug 30, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");
