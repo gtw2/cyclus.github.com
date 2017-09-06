@@ -92,7 +92,7 @@ if(ga_enabled){
 </tr>
 <tr class="field-even field"><th class="field-name">Title:</th><td class="field-body">Separation of Concerns in the <span style="font-variant:small-caps;">Cyclus</span> Ecosystem, or Where Do I Put My Code?</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Last-Modified:</th><td class="field-body">2015-04-20</td>
+<tr class="field-odd field"><th class="field-name">Last-Modified:</th><td class="field-body">2017-09-01</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Author:</th><td class="field-body">Anthony Scopatz, Matthew Gidden</td>
 </tr>
@@ -113,17 +113,18 @@ and central concerns. Many projects may try to tackle the same concern but no
 single project may tackle more than one concern.  Concerns, like projects, may
 be dependent upon one another.</p>
 <p>The central concerns in the <span style="font-variant:small-caps;">Cyclus</span> ecosystem are
-<strong>dynamic resource exchange simulation</strong> (DRES),  <strong>domain models</strong> (DM), and
-<strong>analysis &amp; visualization</strong> (A&amp;V).</p>
+<strong>dynamic resource exchange simulation</strong> (DRES),  <strong>domain models</strong> (DM),
+<strong>analysis &amp; visualization</strong> (A&amp;V), and <strong>simulation orchestration</strong> (ORC).</p>
 </div>
 <div class="section" id="concerns">
 <h2>Concerns<a class="headerlink" href="#concerns" title="Permalink to this headline">¶</a></h2>
-<p>A rich fuel cycle simulator solution has three primary organizational pieces that
+<p>A rich fuel cycle simulator solution has four primary organizational pieces that
 must have robust implementations.  These pieces are a mechanism for solving for
 resource exchange in the fuel cycle, relevant and interesting  models for the
-domains of interest (physics, economics, policy, etc.), and a
+domains of interest (physics, economics, policy, etc.), a
 programmatic method for parsing, slicing, aggregating, and displaying
-simulation results. As an effectively designed suite of software, these concerns
+simulation results, and a mechanism for executing and collecting many simulations.
+As an effectively designed suite of software, these concerns
 should be completely separated from one another
 and interact only through well-defined interfaces <a class="footnote-reference" href="#id5" id="id1">[1]</a>.  This
 independence allows both users and developers to reason about each concern
@@ -228,6 +229,25 @@ must handle the case where only DRES models are used.  However, if domain models
 are used and the analysis &amp; visualization is aware of these domain models,
 all DRES parameters are guaranteed to also be present.</p>
 </div>
+<div class="section" id="simulation-orchestration">
+<h3>Simulation Orchestration<a class="headerlink" href="#simulation-orchestration" title="Permalink to this headline">¶</a></h3>
+<p>Simulation campaigns often involve executing multiple instances of the DRE and
+associated analysis and visualization. This may be with the purpose of,</p>
+<ul class="simple">
+<li>performing a sensitivity study,</li>
+<li>running a parameter sweep,</li>
+<li>sampling from a large option space, or</li>
+<li>creating a training set for machine learning models.</li>
+</ul>
+<p>This execution and analysis is either managed manually or automatically, but it
+is always managed.  Running, analyzing, visualizing, and generating many <span style="font-variant:small-caps;">Cyclus</span>
+input files is termed here &#8220;orchestration.&#8221; This includes provisioning compute
+resources where these tasks are executed. Data management also falls under the
+purview of simulation orchestration.</p>
+<p>Simulation orchestration provides a feedback loop for the <span style="font-variant:small-caps;">Cyclus</span> ecosystem.
+It both drives the DRE simulator and incorporates the results of previous
+simulations.</p>
+</div>
 </div>
 <div class="section" id="the-cyclus-ecosystem">
 <h2>The <span style="font-variant:small-caps;">Cyclus</span> Ecosystem<a class="headerlink" href="#the-cyclus-ecosystem" title="Permalink to this headline">¶</a></h2>
@@ -241,17 +261,17 @@ with these concerns in mind.  If this fails because of a fundamental ambiguity
 or mixing of multiple concerns, place the code with the most dependent concern.
 For example, if it is not clear if a class belongs with domain models or with the
 resource exchange put it with the domain models to be safe.</p>
-<p>The <span style="font-variant:small-caps;">Cyclus</span> development team currently provides and supports three projects,
-one for each concern:</p>
+<p>The <span style="font-variant:small-caps;">Cyclus</span> development team currently supports projects for these concerns:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/cyclus/cyclus">Cyclus</a> - Dynamic Resource Exchange Simulation (individual actors, discrete
 time, canonical supply chain entities)</li>
 <li><a class="reference external" href="https://github.com/cyclus/cycamore">Cycamore</a> - Domain Models</li>
-<li><a class="reference external" href="https://github.com/cyclus/cyclist2">Cyclist</a> -  Analysis &amp; Visualization</li>
+<li><a class="reference external" href="https://github.com/cyclus/cymetric">Cymetric</a> -  Analysis &amp; Visualization</li>
+<li><a class="reference external" href="https://github.com/cyclus/cyclist2">Cyclist</a> -  Analysis &amp; Visualization (historical)</li>
+<li><a class="reference external" href="https://github.com/ergs/rickshaw">Rickshaw</a> - Simulation orchestration</li>
 </ul>
 <p>The dependency graph for these projects is similar to the graph of the concerns.
-Figure 2 displays this graph along with other projects which implement or may
-in the future implement this concern (&#8216;?&#8217;).</p>
+Figure 2 displays this graph along with other projects which implement these concerns.</p>
 <div class="figure align-center" id="id9">
 <img alt="../_images/cep-0002-2.svg" src="../_images/cep-0002-2.svg" /><p class="caption"><span class="caption-text"><strong>Figure 2:</strong> Dependencies Between Projects is <span style="font-variant:small-caps;">Cyclus</span> Ecosystem.</span></p>
 </div>
@@ -338,6 +358,7 @@ primary concern.</p>
 <li><a class="reference internal" href="#dynamic-resource-exchange-simulation">Dynamic Resource Exchange Simulation</a></li>
 <li><a class="reference internal" href="#domain-models">Domain Models</a></li>
 <li><a class="reference internal" href="#analysis-visualization">Analysis &amp; Visualization</a></li>
+<li><a class="reference internal" href="#simulation-orchestration">Simulation Orchestration</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#the-cyclus-ecosystem">The <span style="font-variant:small-caps;">Cyclus</span> Ecosystem</a><ul>
@@ -468,7 +489,7 @@ primary concern.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Aug 30, 2017.
+      Last updated on Sep 06, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

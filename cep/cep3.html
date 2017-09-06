@@ -92,7 +92,7 @@ if(ga_enabled){
 </tr>
 <tr class="field-even field"><th class="field-name">Title:</th><td class="field-body"><span style="font-variant:small-caps;">Cyclus</span> Release Procedure</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Last-Modified:</th><td class="field-body">2017-02-13</td>
+<tr class="field-odd field"><th class="field-name">Last-Modified:</th><td class="field-body">2017-09-01</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Author:</th><td class="field-body">Anthony Scopatz and Matthew Gidden and Baptiste Mouginot</td>
 </tr>
@@ -125,13 +125,14 @@ stable.)  The projects that are under the release manager&#8217;s purview are:</
 </ul>
 <p>The projects which are not yet under the release managers purview are:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/cyclus/cyclist2">Cyclist</a></li>
+<li><a class="reference external" href="https://github.com/ergs/rickshaw">Rickshaw</a></li>
+<li><a class="reference external" href="https://github.com/cyclus/cyclist2">CyclusJS</a></li>
 </ul>
 </div>
 <div class="section" id="release-candidates-tags-branches">
 <h2>Release Candidates (Tags &amp; Branches)<a class="headerlink" href="#release-candidates-tags-branches" title="Permalink to this headline">¶</a></h2>
 <p>At the beginning of a release, a special branch for <em>each</em> project should be
-made off of <code class="docutils literal"><span class="pre">develop</span></code> named <code class="docutils literal"><span class="pre">vX.X.X-release</span></code>. Note the <em>v</em> at the beginning. Each
+made off of <code class="docutils literal"><span class="pre">master</span></code> named <code class="docutils literal"><span class="pre">vX.X.X-release</span></code>. Note the <em>v</em> at the beginning. Each
 project should have the initial version of of it&#8217;s release branch <em>tagged</em> as
 <code class="docutils literal"><span class="pre">X.X.X-rc1</span></code>, the first release candidate.</p>
 <div class="admonition note">
@@ -144,12 +145,12 @@ creation, an announcement should be made to the developer&#8217;s list, and user
 the project should be encouraged to test them out in order to bugs/other issues.</p>
 <p>Any required changes must be pull requested from a topical branch into the
 <em>release</em> branch.  After this has been accepted, the topical branch must be
-merged with <code class="docutils literal"><span class="pre">develop</span></code> as well. The release branch is there so that development
-can continue on the <code class="docutils literal"><span class="pre">develop</span></code> branch while the release candidates (rc) are out
+merged with <code class="docutils literal"><span class="pre">master</span></code> as well. The release branch is there so that development
+can continue on the <code class="docutils literal"><span class="pre">master</span></code> branch while the release candidates (rc) are out
 and under review.  This is because otherwise any new developments would have to
-wait until post-release to be merged into <code class="docutils literal"><span class="pre">develop</span></code> to prevent them from
+wait until post-release to be merged into <code class="docutils literal"><span class="pre">master</span></code> to prevent them from
 accidentally getting released early.</p>
-<p>Everything that is in the release branch must also be part of <code class="docutils literal"><span class="pre">develop</span></code>.
+<p>Everything that is in the release branch must also be part of <code class="docutils literal"><span class="pre">master</span></code>.
 Graphically,</p>
 <div class="figure align-center" id="id4">
 <img alt="../_images/cep-0003-1.svg" src="../_images/cep-0003-1.svg" /><p class="caption"><span class="caption-text"><strong>Figure 1:</strong> Branch hierarchy under release.</span></p>
@@ -157,10 +158,10 @@ Graphically,</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Any commits merged into the release branch must <em>also</em> be merged into
-<code class="docutils literal"><span class="pre">develop</span></code>. It is common practice for the release manager to request the
-reviewer pull requests to merge the subject topical branch into <code class="docutils literal"><span class="pre">develop</span></code>
+<code class="docutils literal"><span class="pre">master</span></code>. It is common practice for the release manager to request the
+reviewer pull requests to merge the topical branch into <code class="docutils literal"><span class="pre">master</span></code>
 as well. However, it is the ultimate release manager&#8217;s responsibility to
-make sure <code class="docutils literal"><span class="pre">develop</span></code> is kept up to date with the <code class="docutils literal"><span class="pre">release</span></code> branch.</p>
+make sure <code class="docutils literal"><span class="pre">master</span></code> is kept up to date with the <code class="docutils literal"><span class="pre">release</span></code> branch.</p>
 </div>
 <p>If changes are made to the release branch, a new candidate must be issued after
 <em>2 - 5 days</em>. Every time a new release candidate comes out the <code class="docutils literal"><span class="pre">vX.X.X-release</span></code>
@@ -168,9 +169,8 @@ must be tagged with the name <code class="docutils literal"><span class="pre">X.
 accompany any new candidate.</p>
 <p>The release branch must be quiet and untouched for <em>2 - 5 days prior</em> to the
 full release. When the full and final release happens, the <code class="docutils literal"><span class="pre">vX.X.X-release</span></code>
-branch is merged into <code class="docutils literal"><span class="pre">master</span></code> and then deleted. All commits in the
-<code class="docutils literal"><span class="pre">vX.X.X-release</span></code> branch must have also been merged into the <code class="docutils literal"><span class="pre">develop</span></code> branch
-as they were accepted.</p>
+branch is deleted. All commits in the <code class="docutils literal"><span class="pre">vX.X.X-release</span></code> branch must have also
+been merged into the <code class="docutils literal"><span class="pre">master</span></code> branch as they were accepted.</p>
 </div>
 <div class="section" id="project-checklist">
 <h2>Project Checklist<a class="headerlink" href="#project-checklist" title="Permalink to this headline">¶</a></h2>
@@ -196,7 +196,7 @@ completing this milestone.</p>
 <li><p class="first">Finish the release candidate process</p>
 <blockquote>
 <div><ul class="simple">
-<li>make sure all commits in the <code class="docutils literal"><span class="pre">release</span></code> branch also are in <code class="docutils literal"><span class="pre">develop</span></code></li>
+<li>make sure all commits in the <code class="docutils literal"><span class="pre">release</span></code> branch also are in <code class="docutils literal"><span class="pre">master</span></code></li>
 </ul>
 </div></blockquote>
 </li>
@@ -206,7 +206,7 @@ completing this milestone.</p>
 <h3>Release Process<a class="headerlink" href="#release-process" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">Make sure every local <span style="font-variant:small-caps;">Cyclus</span> project repository is up to date with its
-<code class="docutils literal"><span class="pre">master</span></code>, <code class="docutils literal"><span class="pre">develop</span></code>, and <code class="docutils literal"><span class="pre">vX.X.X-release</span></code> branches on <code class="docutils literal"><span class="pre">upstream</span></code>.</p>
+<code class="docutils literal"><span class="pre">master</span></code>, and <code class="docutils literal"><span class="pre">vX.X.X-release</span></code> branches on <code class="docutils literal"><span class="pre">upstream</span></code>.</p>
 </li>
 <li><p class="first">Bump the version in <code class="docutils literal"><span class="pre">cyclus/src/version.h.in</span></code>,
 <code class="docutils literal"><span class="pre">cycamore/src/cycamore_version.h.in</span></code>, and
@@ -256,12 +256,12 @@ $ git commit -am <span class="s2">&quot;final release commit after maintenence&q
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Update all develop branches.</p>
+<li><p class="first">Update all master branches.</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /path/to/project
-$ git checkout develop
+$ git checkout master
 $ git merge --no-ff vX.X.X-release
-$ git push upstream develop
+$ git push upstream master
 </pre></div>
 </div>
 </div></blockquote>
@@ -363,7 +363,7 @@ notes and the zip/tar URLs!</li>
 </li>
 <li><p class="first">Commit all changes to <code class="docutils literal"><span class="pre">cyclus.github.com</span></code> and <code class="docutils literal"><span class="pre">make</span> <span class="pre">gh-publish</span></code></p>
 </li>
-<li><p class="first">Send out an email to <cite>cyclus-dev</cite> and <cite>cyclus-users</cite> to announce the release!</p>
+<li><p class="first">Send out an email to <code class="docutils literal"><span class="pre">cyclus-dev</span></code> and <code class="docutils literal"><span class="pre">cyclus-users</span></code> to announce the release!</p>
 </li>
 </ol>
 </div>
@@ -413,7 +413,7 @@ $ ./smbchk.py --update -t HEAD --no-save --check
 </div>
 <p>If <span style="font-variant:small-caps;">Cyclus</span> only has API additions, it is considered stable and the command will
 tell you so. If <span style="font-variant:small-caps;">Cyclus</span> also has API deletions, then <span style="font-variant:small-caps;">Cyclus</span> is considered
-unstable and a diff of the symbols will be prinited.
+unstable and a diff of the symbols will be printed.
 <strong>You cannot release |cyclus| if it is unstable!</strong> Please post the diff to
 either the mailing list or the issue tracker and work to resolve the removed
 symbols until it this command declares that <span style="font-variant:small-caps;">Cyclus</span> is stable. It is
@@ -591,7 +591,7 @@ file.  Commit this and add it to the repo.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Aug 30, 2017.
+      Last updated on Sep 06, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");
