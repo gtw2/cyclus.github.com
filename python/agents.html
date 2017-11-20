@@ -1,23 +1,20 @@
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Agent Interface - Region, Institution, and Facility (cyclus.agents) &#8212; Home</title>
-    
     <link rel="stylesheet" href="../_static/cyclus.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.0-560-g72fa4e36)',
+        VERSION:     '(1.5.1-736-g6a916971)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -51,7 +48,7 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body role="document">
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -95,7 +92,7 @@ if(ga_enabled){
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ctx</strong> : cyclus.lib.Context</p>
 <blockquote class="last">
-<div><p>The simulation execution context.  You don&#8217;t normally
+<div><p>The simulation execution context.  You don’t normally
 need to call the initilaizer.</p>
 </div></blockquote>
 </td>
@@ -138,7 +135,7 @@ above an other agent in the family tree).</p>
 <dd><p>Called when the agent enters the smiulation as an active participant and
 is only ever called once.  Agents should NOT register for services (such
 as ticks/tocks and resource exchange) in this function. If agents implement
-this function, they must call their superclass&#8217; Build function at the
+this function, they must call their superclass’ Build function at the
 BEGINING of their Build function.</p>
 </dd></dl>
 
@@ -165,7 +162,7 @@ initially existing agents are being setup.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Agent.context">
 <code class="descname">context</code><a class="headerlink" href="#cyclus.agents.Agent.context" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns this agent&#8217;s simulation context.</p>
+<dd><p>Returns this agent’s simulation context.</p>
 </dd></dl>
 
 <dl class="method">
@@ -186,7 +183,7 @@ above an other agent in the family tree).</p>
 <code class="descname">decomission</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cyclus.agents.Agent.decomission" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decommissions the agent, removing it from the simulation. Results in
 destruction of the agent object. If agents write their own decommission()
-function, they must call their superclass&#8217; decommission function at the
+function, they must call their superclass’ decommission function at the
 END of their decommission() function.</p>
 </dd></dl>
 
@@ -196,14 +193,14 @@ END of their decommission() function.</p>
 <dd><p>Called to give the agent an opportunity to register for services (e.g.
 ticks/tocks and resource exchange).  Note that this may be called more
 than once, and so agents should track their registrations carefully. If
-agents implement this function, they must call their superclass&#8217;s
+agents implement this function, they must call their superclass’s
 EnterNotify function at the BEGINNING of their EnterNotify function.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Agent.enter_time">
 <code class="descname">enter_time</code><a class="headerlink" href="#cyclus.agents.Agent.enter_time" title="Permalink to this definition">¶</a></dt>
-<dd><p>The time step at which this agent&#8217;s Build function was called
+<dd><p>The time step at which this agent’s Build function was called
 (-1 if the agent has never been built).</p>
 </dd></dl>
 
@@ -227,7 +224,7 @@ will be the enter time plus its lifetime less 1.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Agent.id">
 <code class="descname">id</code><a class="headerlink" href="#cyclus.agents.Agent.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent instance&#8217;s unique ID within a simulation.</p>
+<dd><p>The agent instance’s unique ID within a simulation.</p>
 </dd></dl>
 
 <dl class="method">
@@ -299,19 +296,19 @@ decommissioning (-1 if the agent has an infinite lifetime)</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Agent.parent_id">
 <code class="descname">parent_id</code><a class="headerlink" href="#cyclus.agents.Agent.parent_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The id for this agent&#8217;s parent or -1 if this agent has no parent.</p>
+<dd><p>The id for this agent’s parent or -1 if this agent has no parent.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Agent.prototype">
 <code class="descname">prototype</code><a class="headerlink" href="#cyclus.agents.Agent.prototype" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent&#8217;s prototype.</p>
+<dd><p>The agent’s prototype.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Agent.schema">
 <code class="descname">schema</code><a class="headerlink" href="#cyclus.agents.Agent.schema" title="Permalink to this definition">¶</a></dt>
-<dd><p>&#8220;The class schema based on the state variables.</p>
+<dd><p>“The class schema based on the state variables.</p>
 </dd></dl>
 
 <dl class="method">
@@ -335,7 +332,7 @@ users may choose to override it in exceptional cases.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Agent.spec">
 <code class="descname">spec</code><a class="headerlink" href="#cyclus.agents.Agent.spec" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent&#8217;s spec.</p>
+<dd><p>The agent’s spec.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -374,7 +371,7 @@ a custom version string.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ctx</strong> : cyclus.lib.Context</p>
 <blockquote class="last">
-<div><p>The simulation execution context.  You don&#8217;t normally
+<div><p>The simulation execution context.  You don’t normally
 need to call the initilaizer.</p>
 </div></blockquote>
 </td>
@@ -429,7 +426,7 @@ above an other agent in the family tree).</p>
 <dd><p>Called when the agent enters the smiulation as an active participant and
 is only ever called once.  Agents should NOT register for services (such
 as ticks/tocks and resource exchange) in this function. If agents implement
-this function, they must call their superclass&#8217; Build function at the
+this function, they must call their superclass’ Build function at the
 BEGINING of their Build function.</p>
 </dd></dl>
 
@@ -464,7 +461,7 @@ the facility is ready for decomission. False prevents decomission.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Facility.context">
 <code class="descname">context</code><a class="headerlink" href="#cyclus.agents.Facility.context" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns this agent&#8217;s simulation context.</p>
+<dd><p>Returns this agent’s simulation context.</p>
 </dd></dl>
 
 <dl class="method">
@@ -485,7 +482,7 @@ above an other agent in the family tree).</p>
 <code class="descname">decomission</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cyclus.agents.Facility.decomission" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decommissions the agent, removing it from the simulation. Results in
 destruction of the agent object. If agents write their own decommission()
-function, they must call their superclass&#8217; decommission function at the
+function, they must call their superclass’ decommission function at the
 END of their decommission() function.</p>
 </dd></dl>
 
@@ -495,14 +492,14 @@ END of their decommission() function.</p>
 <dd><p>Called to give the agent an opportunity to register for services (e.g.
 ticks/tocks and resource exchange).  Note that this may be called more
 than once, and so agents should track their registrations carefully. If
-agents implement this function, they must call their superclass&#8217;s
+agents implement this function, they must call their superclass’s
 EnterNotify function at the BEGINNING of their EnterNotify function.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Facility.enter_time">
 <code class="descname">enter_time</code><a class="headerlink" href="#cyclus.agents.Facility.enter_time" title="Permalink to this definition">¶</a></dt>
-<dd><p>The time step at which this agent&#8217;s Build function was called
+<dd><p>The time step at which this agent’s Build function was called
 (-1 if the agent has never been built).</p>
 </dd></dl>
 
@@ -566,7 +563,7 @@ This is meant to be overridden is subclasses.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Facility.id">
 <code class="descname">id</code><a class="headerlink" href="#cyclus.agents.Facility.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent instance&#8217;s unique ID within a simulation.</p>
+<dd><p>The agent instance’s unique ID within a simulation.</p>
 </dd></dl>
 
 <dl class="method">
@@ -638,19 +635,19 @@ decommissioning (-1 if the agent has an infinite lifetime)</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Facility.parent_id">
 <code class="descname">parent_id</code><a class="headerlink" href="#cyclus.agents.Facility.parent_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The id for this agent&#8217;s parent or -1 if this agent has no parent.</p>
+<dd><p>The id for this agent’s parent or -1 if this agent has no parent.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Facility.prototype">
 <code class="descname">prototype</code><a class="headerlink" href="#cyclus.agents.Facility.prototype" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent&#8217;s prototype.</p>
+<dd><p>The agent’s prototype.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Facility.schema">
 <code class="descname">schema</code><a class="headerlink" href="#cyclus.agents.Facility.schema" title="Permalink to this definition">¶</a></dt>
-<dd><p>&#8220;The class schema based on the state variables.</p>
+<dd><p>“The class schema based on the state variables.</p>
 </dd></dl>
 
 <dl class="method">
@@ -674,7 +671,7 @@ users may choose to override it in exceptional cases.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Facility.spec">
 <code class="descname">spec</code><a class="headerlink" href="#cyclus.agents.Facility.spec" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent&#8217;s spec.</p>
+<dd><p>The agent’s spec.</p>
 </dd></dl>
 
 <dl class="method">
@@ -727,7 +724,7 @@ a custom version string.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ctx</strong> : cyclus.lib.Context</p>
 <blockquote class="last">
-<div><p>The simulation execution context.  You don&#8217;t normally
+<div><p>The simulation execution context.  You don’t normally
 need to call the initilaizer.</p>
 </div></blockquote>
 </td>
@@ -770,7 +767,7 @@ above an other agent in the family tree).</p>
 <dd><p>Called when the agent enters the smiulation as an active participant and
 is only ever called once.  Agents should NOT register for services (such
 as ticks/tocks and resource exchange) in this function. If agents implement
-this function, they must call their superclass&#8217; Build function at the
+this function, they must call their superclass’ Build function at the
 BEGINING of their Build function.</p>
 </dd></dl>
 
@@ -797,7 +794,7 @@ initially existing agents are being setup.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Institution.context">
 <code class="descname">context</code><a class="headerlink" href="#cyclus.agents.Institution.context" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns this agent&#8217;s simulation context.</p>
+<dd><p>Returns this agent’s simulation context.</p>
 </dd></dl>
 
 <dl class="method">
@@ -818,7 +815,7 @@ above an other agent in the family tree).</p>
 <code class="descname">decomission</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cyclus.agents.Institution.decomission" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decommissions the agent, removing it from the simulation. Results in
 destruction of the agent object. If agents write their own decommission()
-function, they must call their superclass&#8217; decommission function at the
+function, they must call their superclass’ decommission function at the
 END of their decommission() function.</p>
 </dd></dl>
 
@@ -828,14 +825,14 @@ END of their decommission() function.</p>
 <dd><p>Called to give the agent an opportunity to register for services (e.g.
 ticks/tocks and resource exchange).  Note that this may be called more
 than once, and so agents should track their registrations carefully. If
-agents implement this function, they must call their superclass&#8217;s
+agents implement this function, they must call their superclass’s
 EnterNotify function at the BEGINNING of their EnterNotify function.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Institution.enter_time">
 <code class="descname">enter_time</code><a class="headerlink" href="#cyclus.agents.Institution.enter_time" title="Permalink to this definition">¶</a></dt>
-<dd><p>The time step at which this agent&#8217;s Build function was called
+<dd><p>The time step at which this agent’s Build function was called
 (-1 if the agent has never been built).</p>
 </dd></dl>
 
@@ -859,7 +856,7 @@ will be the enter time plus its lifetime less 1.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Institution.id">
 <code class="descname">id</code><a class="headerlink" href="#cyclus.agents.Institution.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent instance&#8217;s unique ID within a simulation.</p>
+<dd><p>The agent instance’s unique ID within a simulation.</p>
 </dd></dl>
 
 <dl class="method">
@@ -931,19 +928,19 @@ decommissioning (-1 if the agent has an infinite lifetime)</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Institution.parent_id">
 <code class="descname">parent_id</code><a class="headerlink" href="#cyclus.agents.Institution.parent_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The id for this agent&#8217;s parent or -1 if this agent has no parent.</p>
+<dd><p>The id for this agent’s parent or -1 if this agent has no parent.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Institution.prototype">
 <code class="descname">prototype</code><a class="headerlink" href="#cyclus.agents.Institution.prototype" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent&#8217;s prototype.</p>
+<dd><p>The agent’s prototype.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Institution.schema">
 <code class="descname">schema</code><a class="headerlink" href="#cyclus.agents.Institution.schema" title="Permalink to this definition">¶</a></dt>
-<dd><p>&#8220;The class schema based on the state variables.</p>
+<dd><p>“The class schema based on the state variables.</p>
 </dd></dl>
 
 <dl class="method">
@@ -967,7 +964,7 @@ users may choose to override it in exceptional cases.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Institution.spec">
 <code class="descname">spec</code><a class="headerlink" href="#cyclus.agents.Institution.spec" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent&#8217;s spec.</p>
+<dd><p>The agent’s spec.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1020,7 +1017,7 @@ a custom version string.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ctx</strong> : cyclus.lib.Context</p>
 <blockquote class="last">
-<div><p>The simulation execution context.  You don&#8217;t normally
+<div><p>The simulation execution context.  You don’t normally
 need to call the initilaizer.</p>
 </div></blockquote>
 </td>
@@ -1063,7 +1060,7 @@ above an other agent in the family tree).</p>
 <dd><p>Called when the agent enters the smiulation as an active participant and
 is only ever called once.  Agents should NOT register for services (such
 as ticks/tocks and resource exchange) in this function. If agents implement
-this function, they must call their superclass&#8217; Build function at the
+this function, they must call their superclass’ Build function at the
 BEGINING of their Build function.</p>
 </dd></dl>
 
@@ -1090,7 +1087,7 @@ initially existing agents are being setup.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Region.context">
 <code class="descname">context</code><a class="headerlink" href="#cyclus.agents.Region.context" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns this agent&#8217;s simulation context.</p>
+<dd><p>Returns this agent’s simulation context.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1111,7 +1108,7 @@ above an other agent in the family tree).</p>
 <code class="descname">decomission</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cyclus.agents.Region.decomission" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decommissions the agent, removing it from the simulation. Results in
 destruction of the agent object. If agents write their own decommission()
-function, they must call their superclass&#8217; decommission function at the
+function, they must call their superclass’ decommission function at the
 END of their decommission() function.</p>
 </dd></dl>
 
@@ -1121,14 +1118,14 @@ END of their decommission() function.</p>
 <dd><p>Called to give the agent an opportunity to register for services (e.g.
 ticks/tocks and resource exchange).  Note that this may be called more
 than once, and so agents should track their registrations carefully. If
-agents implement this function, they must call their superclass&#8217;s
+agents implement this function, they must call their superclass’s
 EnterNotify function at the BEGINNING of their EnterNotify function.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Region.enter_time">
 <code class="descname">enter_time</code><a class="headerlink" href="#cyclus.agents.Region.enter_time" title="Permalink to this definition">¶</a></dt>
-<dd><p>The time step at which this agent&#8217;s Build function was called
+<dd><p>The time step at which this agent’s Build function was called
 (-1 if the agent has never been built).</p>
 </dd></dl>
 
@@ -1152,7 +1149,7 @@ will be the enter time plus its lifetime less 1.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Region.id">
 <code class="descname">id</code><a class="headerlink" href="#cyclus.agents.Region.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent instance&#8217;s unique ID within a simulation.</p>
+<dd><p>The agent instance’s unique ID within a simulation.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1224,19 +1221,19 @@ decommissioning (-1 if the agent has an infinite lifetime)</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Region.parent_id">
 <code class="descname">parent_id</code><a class="headerlink" href="#cyclus.agents.Region.parent_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The id for this agent&#8217;s parent or -1 if this agent has no parent.</p>
+<dd><p>The id for this agent’s parent or -1 if this agent has no parent.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Region.prototype">
 <code class="descname">prototype</code><a class="headerlink" href="#cyclus.agents.Region.prototype" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent&#8217;s prototype.</p>
+<dd><p>The agent’s prototype.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cyclus.agents.Region.schema">
 <code class="descname">schema</code><a class="headerlink" href="#cyclus.agents.Region.schema" title="Permalink to this definition">¶</a></dt>
-<dd><p>&#8220;The class schema based on the state variables.</p>
+<dd><p>“The class schema based on the state variables.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1260,7 +1257,7 @@ users may choose to override it in exceptional cases.</p>
 <dl class="attribute">
 <dt id="cyclus.agents.Region.spec">
 <code class="descname">spec</code><a class="headerlink" href="#cyclus.agents.Region.spec" title="Permalink to this definition">¶</a></dt>
-<dd><p>The agent&#8217;s spec.</p>
+<dd><p>The agent’s spec.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1430,7 +1427,7 @@ a custom version string.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Sep 06, 2017.
+      Last updated on Nov 20, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

@@ -1,23 +1,20 @@
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Cyclus Core &#8212; Home</title>
-    
     <link rel="stylesheet" href="../_static/cyclus.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.0-560-g72fa4e36)',
+        VERSION:     '(1.5.1-736-g6a916971)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -49,7 +46,7 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body role="document">
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -174,7 +171,7 @@ dependencies is shown below:</p>
 <td>any</td>
 </tr>
 <tr class="row-even"><td>Cython</td>
-<td>0.13.1</td>
+<td>0.25+</td>
 </tr>
 <tr class="row-odd"><td>Python (dev version)</td>
 <td>2.7 or 3.3+</td>
@@ -197,7 +194,7 @@ only needed if Cython is installed.</em></p>
 </div>
 <div class="section" id="installing-dependencies">
 <h2><a class="toc-backref" href="#id3">Installing Dependencies</a><a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
-<p>Cyclus dependencies can either be installed mannualy or using an operating system&#8217;s package
+<p>Cyclus dependencies can either be installed manually or using an operating system’s package
 manager.</p>
 <div class="section" id="installing-dependencies-linux-and-unix">
 <h3>Installing Dependencies (Linux and Unix)<a class="headerlink" href="#installing-dependencies-linux-and-unix" title="Permalink to this headline">¶</a></h3>
@@ -210,7 +207,7 @@ manager (scroll down further for Mac OSX instructions).</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install package
 </pre></div>
 </div>
-<p>where &#8220;package&#8221; is replaced by the correct package name. The minimal list of
+<p>where “package” is replaced by the correct package name. The minimal list of
 required library package names is:</p>
 <ol class="arabic simple">
 <li>make</li>
@@ -240,13 +237,13 @@ required library package names is:</p>
 <li>python-numpy  or  python3-numpy</li>
 <li>python-nose   or  python3-nose</li>
 <li>python-jinja2 or  python3-jinja2</li>
-<li>cython        or  cython3</li>
+<li>cython        or  cython3       (see note below)</li>
 </ol>
 <p>For example, in order to install libxml++ (and libxml2) on your system, type:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install libxml++2.6-dev
 </pre></div>
 </div>
-<p>If you&#8217;d prefer to copy/paste, the following line will install all <strong>required</strong>
+<p>If you’d prefer to copy/paste, the following line will install all <strong>required</strong>
 <em>Cyclus</em> dependencies:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install -y cmake make libboost-all-dev libxml2-dev libxml++2.6-dev <span class="se">\</span>
 libsqlite3-dev libhdf5-serial-dev libbz2-dev coinor-libcbc-dev coinor-libcoinutils-dev <span class="se">\</span>
@@ -277,6 +274,33 @@ python3-jinja2 cython3
 <p>To determine which version of Python is already installed on your computer, run:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>python -V
 </pre></div>
+</div>
+<p>Despite having installed python3, Ubuntu installations may still point at python2.7 by default. So Python -V can return a version of python that is not preferred. In that case the python version can be changed system-wide with the update-alternatives command.</p>
+<p>First, you can list alternatives with the following command:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>update-alternatives --list python
+</pre></div>
+</div>
+</div></blockquote>
+<p>Ubuntu may not list any alternatives. To make Ubuntu aware of python 2.7 and python 3.5, use:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 <span class="m">1</span>
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5 <span class="m">2</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>From now on, to switch between different versions, use:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>sudo update-alternatives --config python
+</pre></div>
+</div>
+</div></blockquote>
+<div class="section" id="cython-note">
+<h4>Cython Note<a class="headerlink" href="#cython-note" title="Permalink to this headline">¶</a></h4>
+<p>If you get an error related to an old Cython version, then this may be
+because the Debian stable version of Cython is 0.23.4. However,
+Cyclus requires 0.25.0+. To install the latest cython version, please
+visit the <a class="reference external" href="http://cython.readthedocs.io/en/latest/src/quickstart/install.html">Cython Documentation</a>.</p>
 </div>
 <div class="section" id="boost-note">
 <h4>Boost Note<a class="headerlink" href="#boost-note" title="Permalink to this headline">¶</a></h4>
@@ -312,7 +336,7 @@ with brew commands in place of the port commands.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo port install package
 </pre></div>
 </div>
-<p>where &#8220;package&#8221; is replaced by the correct package name. The minimal list of
+<p>where “package” is replaced by the correct package name. The minimal list of
 required library package names is:</p>
 <ol class="arabic simple">
 <li>cmake</li>
@@ -366,6 +390,7 @@ sudo make install
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li><a class="reference internal" href="#installing-dependencies">Installing Dependencies</a><ul>
 <li><a class="reference internal" href="#installing-dependencies-linux-and-unix">Installing Dependencies (Linux and Unix)</a><ul>
+<li><a class="reference internal" href="#cython-note">Cython Note</a></li>
 <li><a class="reference internal" href="#boost-note">Boost Note</a></li>
 </ul>
 </li>
@@ -476,7 +501,7 @@ sudo make install
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Sep 06, 2017.
+      Last updated on Nov 20, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

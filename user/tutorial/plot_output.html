@@ -1,23 +1,20 @@
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Advanced Data Exploration Topics &#8212; Home</title>
-    
     <link rel="stylesheet" href="../../_static/cyclus.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '(1.5.0-560-g72fa4e36)',
+        VERSION:     '(1.5.1-736-g6a916971)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -51,7 +48,7 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body role="document">
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -91,15 +88,15 @@ if(ga_enabled){
 Flow view has been designed specifically for <span style="font-variant:small-caps;">Cyclus</span> to visualize the amount
 of material flowing between pairs or collections of facilities.</p>
 <ol class="arabic simple">
-<li>Drag the &#8220;Prototypes&#8221; table into the workspace.</li>
-<li>From the &#8220;Tools&#8221; menu, click on &#8220;Flow&#8221;</li>
+<li>Drag the “Prototypes” table into the workspace.</li>
+<li>From the “Tools” menu, click on “Flow”</li>
 </ol>
 <img alt="Setting up for a flow view" class="align-center" src="../../_images/flow-01-01.png" />
 <ol class="arabic simple" start="3">
-<li>Select the &#8220;ALWR&#8221; prototype in the Prototypes table, and drag it to the
-Material Flow view and drop it on the vertical line under &#8220;Sender&#8221;.</li>
-<li>Repeat this process to drop &#8220;NuclearUnderground&#8221; on the &#8220;Receiver&#8221;.</li>
-<li>Change the &#8220;Time&#8221; in the Material Flow from a single time (1) step to a
+<li>Select the “ALWR” prototype in the Prototypes table, and drag it to the
+Material Flow view and drop it on the vertical line under “Sender”.</li>
+<li>Repeat this process to drop “NuclearUnderground” on the “Receiver”.</li>
+<li>Change the “Time” in the Material Flow from a single time (1) step to a
 range (1-50).</li>
 </ol>
 <img alt="First flow in a flow view." class="align-center" src="../../_images/flow-01-02.png" />
@@ -129,21 +126,21 @@ enrichment plant.</li>
 <p>Be default, Cyclist only loads the most common tables, but you are able to
 load any table that is in the database.</p>
 <ol class="arabic simple">
-<li>Select &#8220;Datatable&#8221; from the &#8220;Data&#8221; menu.</li>
-<li>Choose the database that was loaded for this session and click on &#8220;Connect:&#8221;</li>
+<li>Select “Datatable” from the “Data” menu.</li>
+<li>Choose the database that was loaded for this session and click on “Connect:”</li>
 </ol>
 <img alt="Adding a new datatable" class="align-center" src="../../_images/timeseries-01.png" />
 <ol class="arabic simple" start="3">
-<li>Scroll down to find the &#8220;TimeSeriesPower&#8221; and click &#8220;Ok&#8221;.  Note that it
+<li>Scroll down to find the “TimeSeriesPower” and click “Ok”.  Note that it
 adds this table to the tool bar on the left.</li>
 </ol>
 <img alt="A new datatable has been added." class="align-center" src="../../_images/timeseries-02.png" />
 <ol class="arabic simple" start="4">
 <li>As a custom table, you need to tell Cyclist a little more about this
-data. Select the TimeSeriesPower table and right-click on the &#8220;Time&#8221; field,
+data. Select the TimeSeriesPower table and right-click on the “Time” field,
 choosing IntTime.</li>
-<li>Right-click on the TimeSeriesPower Table and select &#8220;Plot&#8221;.</li>
-<li>Drag the &#8220;Time&#8221; field to the x-axis and the &#8220;Value&#8221; field to the y-axis.</li>
+<li>Right-click on the TimeSeriesPower Table and select “Plot”.</li>
+<li>Drag the “Time” field to the x-axis and the “Value” field to the y-axis.</li>
 </ol>
 <img alt="A plot of reactor power vs time." class="align-center" src="../../_images/timeseries-03.png" />
 <p>Here we can see the periodic refueling outages of the reactors, with each one
@@ -151,8 +148,8 @@ offline for 1 month of each year.  They are not synchronized because sthere
 were delays in starting the reactors due to constraints in the acquisition of
 U ore by the EnrichPlant.</p>
 <ol class="arabic simple" start="7">
-<li>Right-click on the &#8220;AgentID&#8221; field and select &#8220;Dimension&#8221;.  Then drag this
-field first to the &#8220;Group By&#8221; box and also to become a filter at the top of
+<li>Right-click on the “AgentID” field and select “Dimension”.  Then drag this
+field first to the “Group By” box and also to become a filter at the top of
 the plot.</li>
 </ol>
 <img alt="Power curves for each reactor" class="align-center" src="../../_images/timeseries-04-annotated.png" />
@@ -298,7 +295,7 @@ the plot.</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Sep 06, 2017.
+      Last updated on Nov 20, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

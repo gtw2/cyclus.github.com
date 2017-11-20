@@ -1,23 +1,20 @@
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>CEP 18 - Dynamic Resource Exchange Procedure &#8212; Home</title>
-    
     <link rel="stylesheet" href="../_static/cyclus.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.0-560-g72fa4e36)',
+        VERSION:     '(1.5.1-736-g6a916971)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -51,7 +48,7 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body role="document">
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -127,7 +124,7 @@ simulation during the <strong>resolve</strong> step, which occurs after the <str
 before the <strong>tock</strong> for each timestep.</p>
 <p>Markets are communicated with through Messages. Communication to Markets utilize
 the Transaction class to define whether the communication is an <strong>offer</strong> or
-<strong>request</strong> for the Market&#8217;s commodity. Communication is initialized by
+<strong>request</strong> for the Market’s commodity. Communication is initialized by
 Facilities, but there is no <span style="font-variant:small-caps;">Cyclus</span> core support for this operation. Individual
 derived Facilities (e.g., the Sink and Source in Cycamore)
 define this functionality during their <strong>HandleTick</strong> functions. This
@@ -153,7 +150,7 @@ reasons, is that the Transaction class is ambiguous with respect to proposed
 offers, requests, and matched offers and requests. This ambiguity can be
 addressed during a refactor to provide clarity to future developers. Third,
 there is no defined structure to the market-facility interaction. This
-interaction is the core purpose of <span style="font-variant:small-caps;">Cyclus</span>&#8216; Dynamic Resource Exchange concern,
+interaction is the core purpose of <span style="font-variant:small-caps;">Cyclus</span>’ Dynamic Resource Exchange concern,
 but users and developers are required to define their own interactions (e.g.,
 sending offers during the tick phase). The original conception of the tick-tock
 paradigm was to define a notion of time before the resource exchange (i.e., a
@@ -161,7 +158,7 @@ pre-step) and after the resource exchange (i.e., a post-step). The current
 implementation includes the resource exchange concern during both of these
 phases, complicating the process and mixing concerns. Finally, there is no
 response mechanism for facilities to delineate between resources of a given
-commodity. The current implementation places this concern upon the market&#8217;s
+commodity. The current implementation places this concern upon the market’s
 resolution algorithm, rather than on the facility via some communication
 mechanism, again muddying the concerns associated with the resource exchange.</p>
 </div>
@@ -226,7 +223,7 @@ reactor that chooses to requests fuel assemblies, of which they request many.</p
 (as nodes) is shown.</p>
 <p>The second phase allows suppliers to <strong>respond</strong> to the set of consumption
 portfolios, and is termed the <strong>Response to Request for Bids</strong> (RRFB) phase
-(analogous to Julka&#8217;s Reply to Request for Quote phase). Each consumption
+(analogous to Julka’s Reply to Request for Quote phase). Each consumption
 portfolio is comprised of requests for some set of commodities, and suppliers of
 those commodities are allowed to respond to demand. Suppliers, like consumers,
 are allowed to offer the null set of isotopics.</p>
@@ -254,7 +251,7 @@ orders, but is constrained by the total SWUs it can provide.</p>
 supplies (as nodes) is shown.</p>
 <p>The final phase of the information gathering procedure allows consumer
 facilities to adjust their set of preferences and for managers of consumer
-facilities to affect the consumer&#8217;s set of preferences, as described in the
+facilities to affect the consumer’s set of preferences, as described in the
 remaining sections. Accordingly, the last phase is termed the <strong>Preference
 Adjustment</strong> (PA) phase. Preference adjustments can occur in response to the set
 of responses provided by producer facilities. Consider the example of a reactor
@@ -297,7 +294,7 @@ commodities, and some may be both. Supplier agents are provided agency by being
 able to communicate to the market-resolution mechanism a variety of production
 capacity constraints in second phase of the information gathering
 methodology. Consumer agents are provided agency by being able to assign
-preferences among possible suppliers based on the supplier&#8217;s quality of
+preferences among possible suppliers based on the supplier’s quality of
 product. Because this agency is encapsulated for each agent, it is possible to
 define strategies that can be attached or detached to the agents at
 run-time. Such strategies are an example of the Strategy design pattern
@@ -322,7 +319,7 @@ arise in real life where an institution has the capability to service its own
 facilities, but choose to use an outside provider because of either cost or time
 constraints. Such a situation is allowed in this framework as well. It is not
 clear how such a relationship should be instantiated and to what degree
-institutions should be allowed to affect their managed facilities&#8217;
+institutions should be allowed to affect their managed facilities’
 preferences. This issue lies squarely in the realm of simulation design
 decisions, part of the <strong>art</strong> of simulation. Accordingly, the strategy of
 affecting preferences is encapsulated within the full preference allocation
@@ -399,7 +396,7 @@ tests in the <a class="reference external" href="https://github.com/gidden/cyclu
 information regarding the players (i.e., requesters and suppliers) as well as
 information regarding requests and bids. The ResourceExchange initiates the
 various phases and updates the context state. As currently envisioned, an
-exchange and context&#8217;s lifetime is the single resolution of the exchange at a
+exchange and context’s lifetime is the single resolution of the exchange at a
 given time. The exchange is populated with traders as known by the wider
 simulation context. Both the ExchangeContext and ResourceExchange are templated
 on the Resource being exchanged, as was the case above. An overview of the
@@ -466,7 +463,7 @@ Requester, preferences are allowed to be perturbed, which looks nominally like:<
 <h3>ExchangeGraph<a class="headerlink" href="#exchangegraph" title="Permalink to this headline">¶</a></h3>
 <p>An ExchangeGraph is a graph representation of a resource exchange. It provides a
 resource-free representation of the exchange, i.e., the quality-specific
-constraint and preference values are &#8220;baked in&#8221;. By the nature of the
+constraint and preference values are “baked in”. By the nature of the
 supplier/requester setup, the graph is bipartite, thus there is a notion of U
 (left) and V (right) nodes, and arcs strictly connect a U node to a V
 node. Constraints are defined along arcs, where each u-v node pair is associated
@@ -707,7 +704,7 @@ requests</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Sep 06, 2017.
+      Last updated on Nov 20, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

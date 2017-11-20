@@ -1,23 +1,20 @@
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Adding Buffers and Policies from the Toolkit &#8212; Home</title>
-    
     <link rel="stylesheet" href="../../_static/cyclus.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '(1.5.0-560-g72fa4e36)',
+        VERSION:     '(1.5.1-736-g6a916971)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -51,7 +48,7 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body role="document">
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -122,7 +119,7 @@ simply have to add the following:</div></blockquote>
 </pre></div>
 </div>
 <p>This creates a state variable named <code class="docutils literal"><span class="pre">inventory</span></code> that is based on the
-<code class="docutils literal"><span class="pre">cyclus::toolkit::ResBuf</span></code> class.  We&#8217;ll explain how buffers and policies
+<code class="docutils literal"><span class="pre">cyclus::toolkit::ResBuf</span></code> class.  We’ll explain how buffers and policies
 work in just a moment.  A ResBuf object has special handling by the
 preprocessor, so it will not appear in the schema and therefore will not
 appear in the Cycic UI either.</p>
@@ -146,7 +143,7 @@ thus do not need a pragma</p>
 </pre></div>
 </div>
 <p>There needs to be a mechansim for keeping track of when materials enter the
-inventory. In order to utilize Cyclus&#8217; sophisticated restart capability, we must
+inventory. In order to utilize Cyclus’ sophisticated restart capability, we must
 choose a data structure that is compatible with the at least one of the Cyclus
 output databases (see <a class="reference internal" href="../dbtypes.html#dbtypes"><span class="std std-ref">Database Types</span></a>). Given that requirement, an appropriate
 data structure is a <a class="reference external" href="http://www.cplusplus.com/reference/list/list/">list</a>. Accordingly, add the
@@ -563,11 +560,11 @@ member is to guarantee that the amount of material in the facility never exceeds
 a certain value. The only way for material to enter the facility is through the
 <code class="docutils literal"><span class="pre">input</span></code> ResBuff via the <code class="docutils literal"><span class="pre">buy_policy</span></code>. The <code class="docutils literal"><span class="pre">MatlBuyPolicy</span></code> sets a maximum
 buy amount based on both its <code class="docutils literal"><span class="pre">throughput</span></code> and the <code class="docutils literal"><span class="pre">capacity</span></code> of the
-connected <code class="docutils literal"><span class="pre">ResBuf</span></code>. Accordingly, you can update the <code class="docutils literal"><span class="pre">input</span></code> buffer&#8217;s
+connected <code class="docutils literal"><span class="pre">ResBuf</span></code>. Accordingly, you can update the <code class="docutils literal"><span class="pre">input</span></code> buffer’s
 capacity before the DRE occurs to achieve this behavior.</p>
 <div class="figure align-center" id="id3">
 <img alt="../../_images/storage_capacity.svg" src="../../_images/storage_capacity.svg" /><p class="caption"><span class="caption-text"><strong>Figure:</strong> Storage buffers between two time steps. The total capacity is
-represented by the area of all three boxes. The <code class="docutils literal"><span class="pre">input</span></code> buffer&#8217;s capacity
+represented by the area of all three boxes. The <code class="docutils literal"><span class="pre">input</span></code> buffer’s capacity
 must be updated to reflect how much material is in both the <code class="docutils literal"><span class="pre">inventory</span></code>
 and <code class="docutils literal"><span class="pre">output</span></code> buffers. The colored arrows on the right match the material
 flows in the previous figure.</span></p>
@@ -613,7 +610,7 @@ the end of the <code class="docutils literal"><span class="pre">config</span></c
 </div>
 <p>Note that this capacity is smaller than the throughput! What do you think you
 will see in the output logs?</p>
-<p>Try it out (don&#8217;t forget to delete the old sqlite file first):</p>
+<p>Try it out (don’t forget to delete the old sqlite file first):</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> rm cyclus.sqlite
 <span class="gp">$</span> cyclus -v <span class="m">3</span> input/storage.xml
 <span class="go">              :</span>
@@ -898,7 +895,7 @@ will see in the output logs?</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Sep 06, 2017.
+      Last updated on Nov 20, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

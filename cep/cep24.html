@@ -1,23 +1,20 @@
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>CEP 24 - Default Preferences &#8212; Home</title>
-    
     <link rel="stylesheet" href="../_static/cyclus.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.0-560-g72fa4e36)',
+        VERSION:     '(1.5.1-736-g6a916971)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -51,7 +48,7 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body role="document">
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -132,12 +129,12 @@ non-positive preferences (see <a class="reference internal" href="#backwards-com
 backwards compatability will be broken if any previous model was dependent on a
 default preference value of <cite>0</cite>. Developers will have to update models given the
 new default preference value of <cite>1</cite>.</p>
-<p>For a simulator, however, this is still backwards incompatability &#8211; simulation
+<p>For a simulator, however, this is still backwards incompatability – simulation
 behavior for valid input files can (and will) change if explicit use of 0-valued
 preferences is engaged. Accordingly, to make this deprecation loud and explicit,
 an error will be thrown for the remainder of this minor release cycle (currently
 release 1.3.1 to 1.3.2). At the end of this cycle, arcs with 0-valued
-preferences will be &#8220;quietly&#8221; removed (i.e., as quietly as negative-preference
+preferences will be “quietly” removed (i.e., as quietly as negative-preference
 arcs are currently). An issue will be made to perform this update.</p>
 <p>For updating archetype code, look primarily to the <cite>AddRequest</cite> and
 <cite>Adjust*Pref</cite> APIs.</p>
@@ -303,7 +300,7 @@ arcs are currently). An issue will be made to perform this update.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Sep 06, 2017.
+      Last updated on Nov 20, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

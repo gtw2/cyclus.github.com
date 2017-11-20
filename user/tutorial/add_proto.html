@@ -1,23 +1,20 @@
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Adding Prototypes to your Simulation &#8212; Home</title>
-    
     <link rel="stylesheet" href="../../_static/cyclus.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '(1.5.0-560-g72fa4e36)',
+        VERSION:     '(1.5.1-736-g6a916971)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -51,7 +48,7 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body role="document">
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -103,15 +100,15 @@ archetype.</p>
 <ol class="arabic simple">
 <li>Drag the cycamore Source archetype from the ribbon to the fuel cycle design pane.</li>
 <li>Right-click on the Source facility to show its context menu, and choose
-&#8220;Facility Documentation&#8221;.  Close the documentation when finished.</li>
+“Facility Documentation”.  Close the documentation when finished.</li>
 <li>Double click on the Source facility that you just dropped to open its configuration window.</li>
-<li>Choose a name for your Source prototype, e.g. &#8220;U Mine&#8221;.</li>
+<li>Choose a name for your Source prototype, e.g. “U Mine”.</li>
 </ol>
-<p><em>Bonus: From the Source facility&#8217;s context menu (right-click) choose &#8220;Change
-Niche&#8221; and type &#8220;mine&#8221; as the New Niche.  The only purpose of the niche is to
+<p><em>Bonus: From the Source facility’s context menu (right-click) choose “Change
+Niche” and type “mine” as the New Niche.  The only purpose of the niche is to
 allow different visualization in the fuel design pane.  Other niches include:
-&#8220;fuel fabriaction&#8221;, &#8220;reactor&#8221;, &#8220;abr&#8221;, &#8220;repository&#8221;, &#8220;reprocessing&#8221;,
-&#8220;separations&#8221;.</em></p>
+“fuel fabriaction”, “reactor”, “abr”, “repository”, “reprocessing”,
+“separations”.</em></p>
 <p>Your fuel cycle design should now look like this:</p>
 <img alt="Fuel cycle design pane showing first prototype." class="align-center" src="../../_images/first_proto.png" />
 </div>
@@ -128,9 +125,9 @@ composition; this will be determined by the agents during the simulation.</p>
 <div class="section" id="activity-add-a-commodity-to-the-mine">
 <h3>Activity: Add a commodity to the mine<a class="headerlink" href="#activity-add-a-commodity-to-the-mine" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Add a commodity in the commodity list of the main view: &#8220;U-ore&#8221; (For now,
+<li>Add a commodity in the commodity list of the main view: “U-ore” (For now,
 you can ignore the priority setting)</li>
-<li>In the configuration window for the mine, select &#8220;U-ore&#8221; from the Output Commodity dropdown menu</li>
+<li>In the configuration window for the mine, select “U-ore” from the Output Commodity dropdown menu</li>
 </ol>
 <img alt="A first commodity and its use in the mine." class="align-center" src="../../_images/mine_commod.png" />
 </div>
@@ -145,7 +142,7 @@ you can ignore the priority setting)</li>
 <li>Name: MyEnrichPlant</li>
 <li>Feed Commodity: U-ore</li>
 </ul>
-<p>Notice that when you specify the feed commodity as &#8220;U-ore&#8221;, a line is
+<p>Notice that when you specify the feed commodity as “U-ore”, a line is
 automatically drawn to indicate possible trading of material between the mine
 and the enrichment facility.</p>
 </div></blockquote>
@@ -187,19 +184,19 @@ empty location.</li>
 </ol>
 <img alt="Initial view of the Recipe Builder." class="align-center" src="../../_images/recipe-builder-drag.png" />
 <ol class="arabic simple" start="2">
-<li>Select &#8220;Add New Recipe&#8221;</li>
+<li>Select “Add New Recipe”</li>
 <li>Give your recipe a name: Nat-U</li>
 <li>Choose either the mass or atom basis.  In this case a mass basis is more straightforward.</li>
-<li>Click on the &#8220;Add Isotope&#8221; button</li>
+<li>Click on the “Add Isotope” button</li>
 <li>Enter the information for U-235.  <span style="font-variant:small-caps;">Cyclus</span> uses a robust system that allows
 users to refer to isotopes in a multitude of formats.  For U-235, you can
-enter either &#8220;U-235&#8221; or &#8220;92235&#8221;.  The mass fraction is 0.007.</li>
+enter either “U-235” or “92235”.  The mass fraction is 0.007.</li>
 </ol>
 <img alt="The natural uranium recipe after adding only U-235." class="align-center" src="../../_images/recipe-natU-235-only.png" />
 <ol class="arabic simple" start="7">
 <li>Repeat steps 5 &amp; 6 for U-238.</li>
 <li>Return to the configuration window for the enrichment plant</li>
-<li>Select &#8220;Nat-U&#8221; recipe as the feed recipe</li>
+<li>Select “Nat-U” recipe as the feed recipe</li>
 </ol>
 <img alt="The natural uranium recipe is complete and assigned to the Enrichment facility's feed recipe." class="align-center" src="../../_images/recipe-natU-finished-assigned.png" />
 </div>
@@ -215,13 +212,13 @@ and configure it with the following information.</p>
 <li>Name: ALWR</li>
 <li>Fresh Fuel Commodity List: Fresh-UOX-Fuel</li>
 <li>Fresh Fuel Recipe List:<ul>
-<li>Fresh-UOX-Fuel-4: create a recipe with a mass basis with 4% U-235 <em>(you&#8217;ll need to add this)</em></li>
+<li>Fresh-UOX-Fuel-4: create a recipe with a mass basis with 4% U-235 <em>(you’ll need to add this)</em></li>
 </ul>
 </li>
-<li>Spent Fuel Commodity List: Used-UOX-Fuel <em>(you&#8217;ll need to add this)</em></li>
+<li>Spent Fuel Commodity List: Used-UOX-Fuel <em>(you’ll need to add this)</em></li>
 <li>Spent Fuel Recipe List:</li>
 <li>Used-UOX-Fuel-4: create a recipe with a mass basis with:<ul>
-<li>1% U-235, 94% U-238, 1% Pu-239, 4% Cs-137 <em>(you&#8217;ll need to add this)</em></li>
+<li>1% U-235, 94% U-238, 1% Pu-239, 4% Cs-137 <em>(you’ll need to add this)</em></li>
 </ul>
 </li>
 <li>Assembly Mass: 33000 kg</li>
@@ -237,7 +234,7 @@ and configure it with the following information.</p>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>Change the niche to &#8220;repository&#8221;</li>
+<li>Change the niche to “repository”</li>
 <li>Name: UndergroundFacility</li>
 <li>Input commodity: Used-UOX-Fuel</li>
 </ul>
@@ -249,27 +246,27 @@ and configure it with the following information.</p>
 <h2>Advanced Input Options<a class="headerlink" href="#advanced-input-options" title="Permalink to this headline">¶</a></h2>
 <p>In order to streamline input for users, some advanced input quantities are
 hidden by default.  These input quantities will always have default values, so
-users aren&#8217;t required to set them.  In theory, the archetype developers can
+users aren’t required to set them.  In theory, the archetype developers can
 create many layers with increasing numbers of input quantities.  These deeper
-levels of inputs are accesible using the &#8220;User Level&#8221; option on each form.</p>
+levels of inputs are accesible using the “User Level” option on each form.</p>
 <div class="section" id="activity-set-the-reactor-power">
 <h3>Activity: Set the Reactor Power<a class="headerlink" href="#activity-set-the-reactor-power" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Open the configuration form for the &#8220;ALWR&#8221; reactor</li>
-<li>Change the &#8220;User Level&#8221; to 1</li>
+<li>Open the configuration form for the “ALWR” reactor</li>
+<li>Change the “User Level” to 1</li>
 </ol>
 <img alt="First look at user level 1 for the reactor" class="align-center" src="../../_images/user-level-1.png" />
 <ol class="arabic simple" start="3">
-<li>Scroll down to find the input for &#8220;Power&#8221; and set it to 1000 MWe</li>
+<li>Scroll down to find the input for “Power” and set it to 1000 MWe</li>
 </ol>
 <img alt="First look at user level 1 for the reactor" class="align-center" src="../../_images/user-level-1-power-annotated.png" />
 </div>
 <div class="section" id="activity-set-the-maximum-inventory-of-feed-at-the-reactor">
 <h3>Activity: Set the Maximum Inventory of Feed at the Reactor<a class="headerlink" href="#activity-set-the-maximum-inventory-of-feed-at-the-reactor" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Open the configuration form for the &#8220;EnrichPlant&#8221;</li>
-<li>Chnage to &#8220;User Level: 1</li>
-<li>Find the &#8220;Maximum Feed Inventory&#8221; entry and set it to: 1000000</li>
+<li>Open the configuration form for the “EnrichPlant”</li>
+<li>Chnage to “User Level: 1</li>
+<li>Find the “Maximum Feed Inventory” entry and set it to: 1000000</li>
 </ol>
 <img alt="First look at user level 1 for the reactor" class="align-center" src="../../_images/enrich-max-inv-annotated.png" />
 </div>
@@ -429,7 +426,7 @@ levels of inputs are accesible using the &#8220;User Level&#8221; option on each
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Sep 06, 2017.
+      Last updated on Nov 20, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

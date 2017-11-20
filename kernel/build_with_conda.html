@@ -1,23 +1,20 @@
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Building Cyclus With Conda &#8212; Home</title>
-    
     <link rel="stylesheet" href="../_static/cyclus.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.0-560-g72fa4e36)',
+        VERSION:     '(1.5.1-736-g6a916971)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -51,7 +48,7 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body role="document">
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -84,6 +81,15 @@ if(ga_enabled){
             
   <div class="section" id="building-cyclus-with-conda">
 <h1>Building <span style="font-variant:small-caps;">Cyclus</span> With Conda<a class="headerlink" href="#building-cyclus-with-conda" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">In the cyclus ecosystem, only versions whose micro or patch number
+(the third and last number) are zero  are considered <strong>stable</strong>.
+Other releases where the version number is greater than zero are
+bugfix and maintainence releases and are considered <strong>unstable</strong>.
+For example, a release number of <code class="docutils literal"><span class="pre">1.42.0</span></code> is stable, while
+<code class="docutils literal"><span class="pre">1.42.3</span></code> is unstable.</p>
+</div>
 <p>The process of building Conda packages involves a system called
 <a class="reference external" href="http://conda.pydata.org/docs/build.html">Conda Recipes</a> . A Conda Recipe
 is a directory containing at least two files, meta.yaml and build.sh.
@@ -125,9 +131,9 @@ the repo of your choice.</p>
 <p>3) <strong>Change the branch to build:</strong> In <code class="docutils literal"><span class="pre">cyclus/meta.yaml</span></code> (or Cycamore), alter the
 <code class="docutils literal"><span class="pre">git_tag</span></code> field to the branch or tag you want to use.</p>
 <p>4) <strong>Test a new build process for Cyclus and Cycamore:</strong> To alter <span style="font-variant:small-caps;">Cyclus</span> or
-Cycamore&#8217;s build process, look at <code class="docutils literal"><span class="pre">build.sh</span></code> in <span style="font-variant:small-caps;">Cyclus</span> or Cycamore
+Cycamore’s build process, look at <code class="docutils literal"><span class="pre">build.sh</span></code> in <span style="font-variant:small-caps;">Cyclus</span> or Cycamore
 respectively.</p>
-<p>5) <strong>Create/upload a new version of a dependency:</strong> Alter the dependency&#8217;s
+<p>5) <strong>Create/upload a new version of a dependency:</strong> Alter the dependency’s
 <code class="docutils literal"><span class="pre">meta.yaml</span></code> file to point to the correct version of dependency source code.
 Build the package, follow instructions in 1 to upload to Binstar.</p>
 </div>
@@ -267,7 +273,7 @@ Build the package, follow instructions in 1 to upload to Binstar.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Sep 06, 2017.
+      Last updated on Nov 20, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

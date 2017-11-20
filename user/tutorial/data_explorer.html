@@ -1,23 +1,20 @@
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>An Introduction to Data Exploration &#8212; Home</title>
-    
     <link rel="stylesheet" href="../../_static/cyclus.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '(1.5.0-560-g72fa4e36)',
+        VERSION:     '(1.5.1-736-g6a916971)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -51,7 +48,7 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body role="document">
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -85,7 +82,7 @@ if(ga_enabled){
             
   <div class="section" id="an-introduction-to-data-exploration">
 <h1>An Introduction to Data Exploration<a class="headerlink" href="#an-introduction-to-data-exploration" title="Permalink to this headline">¶</a></h1>
-<p>The &#8220;Data Exploration&#8221; tab in Cyclist provides a way to fluidly explore the
+<p>The “Data Exploration” tab in Cyclist provides a way to fluidly explore the
 data that arises from a <span style="font-variant:small-caps;">Cyclus</span> simulation. A variety of views can be
 manipulated in a straightforward and interactive way to develop a thorough
 understanding of the features that matter the most.</p>
@@ -113,46 +110,46 @@ for a variety of roles in the views:</li>
 <div class="section" id="activity-examine-your-first-data-exploration-session">
 <h2>Activity: Examine Your First Data Exploration Session<a class="headerlink" href="#activity-examine-your-first-data-exploration-session" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Click on the &#8220;QuantityInventory&#8221; table to selecct it.</li>
-<li>Right-click on the &#8220;QuantityInventory&#8221; table and select &#8220;Plot&#8221;</li>
+<li>Click on the “QuantityInventory” table to selecct it.</li>
+<li>Right-click on the “QuantityInventory” table and select “Plot”</li>
 </ol>
 <img alt="A blank plot window" class="align-center" src="../../_images/plot-01-01.png" />
 <ol class="arabic simple" start="3">
-<li>Select a &#8220;Time&#8221; as the x-axis by dragging it from the &#8220;Fields&#8221; pane and
+<li>Select a “Time” as the x-axis by dragging it from the “Fields” pane and
 dropping it in X-axis entry-box.</li>
-<li>Do the same for &#8220;Quantity&#8221; on the y-axis.</li>
+<li>Do the same for “Quantity” on the y-axis.</li>
 </ol>
 <img alt="A first inventory plots" class="align-center" src="../../_images/plot-01-02.png" />
 <p>This shows a plot of the total inventory in the system as a function of time.</p>
 <ol class="arabic simple" start="5">
-<li>Drag the &#8220;Protoype&#8221; field into the &#8220;Group by&#8221; entry to see the results
+<li>Drag the “Protoype” field into the “Group by” entry to see the results
 split up by the prototype that contained that inventory.</li>
 </ol>
 <img alt="Inventory plots shown by protoype" class="align-center" src="../../_images/plot-01-03.png" />
 <ol class="arabic simple" start="7">
-<li>Use the &#8220;Axis&#8221; menu at the top right of the plot to adjust the y-axis to be logarithmic.</li>
-<li>Add &#8220;NucID&#8221; as an addition &#8220;Group by&#8221; field to see the total mass of each
+<li>Use the “Axis” menu at the top right of the plot to adjust the y-axis to be logarithmic.</li>
+<li>Add “NucID” as an addition “Group by” field to see the total mass of each
 nuclide that was resident in each type of facility in the system as a
 function of time.</li>
 </ol>
 <img alt="Inventory plots shown by prototype and by nuclide." class="align-center" src="../../_images/plot-01-04.png" />
 <p>This image is becoming somewhat busy, so we can add some filters.</p>
 <ol class="arabic simple" start="9">
-<li>Drop the &#8220;Prototype&#8221; field to the middle of the title bar for the plot.  A
+<li>Drop the “Prototype” field to the middle of the title bar for the plot.  A
 new control panel opens on the right to control the filters.  Select only
 the enrichment plant (EnrichPlant) and the repository (NuclearUnderground).</li>
 </ol>
 <img alt="Inventory plots with filters to help select data." class="align-center" src="../../_images/plot-01-05-annotated.png" />
 <ol class="arabic simple" start="10">
-<li>We can combine this with another filter: drop the &#8220;NucID&#8221; field in the
-title bar next to the &#8220;Prototype&#8221; filter.  Select all the facilities
-protypes only &#8220;U235&#8221; and &#8220;Pu239&#8221; to examine the inventory of fissile
+<li>We can combine this with another filter: drop the “NucID” field in the
+title bar next to the “Prototype” filter.  Select all the facilities
+protypes only “U235” and “Pu239” to examine the inventory of fissile
 material in diferent facilities throughout the system.</li>
 </ol>
 <img alt="Inventory plots with filters to help select data." class="align-center" src="../../_images/plot-01-06.png" />
 <ol class="arabic simple" start="11">
-<li>Notice the fluctations at the beginning! Let&#8217;s zoom in a little by adding
-the &#8220;Time&#8221; field as yet another filter. Notice how it appears as a slider
+<li>Notice the fluctations at the beginning! Let’s zoom in a little by adding
+the “Time” field as yet another filter. Notice how it appears as a slider
 bar with entries for a time window.  Use the sliders, or the text entry to
 choose a window between time steps 0 and 60 (the first 5 years).</li>
 </ol>
@@ -162,7 +159,7 @@ choose a window between time steps 0 and 60 (the first 5 years).</li>
 <li>The enrichment plant began enriching in the first time step and was then
 able to provide enough fuel for a full core loading in the second time step.
 At that time we see the inventory of both U-235 and U-238 drop.</li>
-<li>The enerichment plant&#8217;s inventory then oscillates as it build up enough
+<li>The enerichment plant’s inventory then oscillates as it build up enough
 material for an additional reactor to come online.  Once all reactors have
 full core loadings (100 tonnes each), the total reactor inventory reaches
 eqilibirum.</li>
@@ -170,7 +167,7 @@ eqilibirum.</li>
 at the repository as spent fuel and begins accumulating.</li>
 </ul>
 <ol class="arabic simple" start="12">
-<li>Finally, remove &#8220;Time&#8221; from the x-axis and move &#8220;Protoype&#8221; from the Group
+<li>Finally, remove “Time” from the x-axis and move “Protoype” from the Group
 By to the x-axis, select all the nuclides in the filter, and expand the
 time filter to include the whole simulation.  This has quickly become a
 bar chart showing the relative nuc8lide amounts in each facility type.</li>
@@ -314,7 +311,7 @@ bar chart showing the relative nuc8lide amounts in each facility type.</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Sep 06, 2017.
+      Last updated on Nov 20, 2017.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");
