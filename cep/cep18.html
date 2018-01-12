@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.1-736-g6a916971)',
+        VERSION:     '(1.5.3)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="../_static/cloud.base.js"></script>
     <script type="text/javascript" src="../_static/cloud.js"></script>
@@ -204,17 +205,17 @@ material, including depleted uranium from enrichment or reprocessed uranium from
 separations. Accordingly, it could demand both commodities as long as it
 provides a corresponding constraint with respect to total consumption.</p>
 <p>At the completion of the RFB phase, the market exchange will have a set of
-consumption portfolios, <img class="math" src="../_images/math/9dcbbef8e0f76051d388013b90a95bec3069e484.png" alt="P"/>, for each requester in the exchange, shown as
+consumption portfolios, <span class="math">\(P\)</span>, for each requester in the exchange, shown as
 the orange box in Figure 1. Each portfolio consists of a set of requests,
-<img class="math" src="../_images/math/a00254b18ffa992f0ef19f6e6e095b83c8f85e94.png" alt="R"/>, a cardinal preferential ordering over the requests, <img class="math" src="../_images/math/039cbbef9ce27480e379023f2389513827fcd5db.png" alt="\alpha_R"/>,
-and possibly a set of constraints over the requests, <img class="math" src="../_images/math/b5c5c13389129441e5fe91b0b30ab3d45207261e.png" alt="c_R"/>. A constraint
+<span class="math">\(R\)</span>, a cardinal preferential ordering over the requests, <span class="math">\(\alpha_R\)</span>,
+and possibly a set of constraints over the requests, <span class="math">\(c_R\)</span>. A constraint
 can be associated with more than one request. Take the previous example of MOX
 and UOX for an LWR. Each is a separate request, but a constraint may be
 concerned with the combination of the two. Another example is a repository that
 may request many commodities, but has a radiotoxicity constraint over any
 commodities it receives for a given time step.</p>
-<p>A request consists of a quantity, <img class="math" src="../_images/math/6e8e6044151c93d08d545a310fc471c1a931a2b3.png" alt="q_r"/>, and a target isotopic vector,
-<img class="math" src="../_images/math/bf88372a5ecc40823694d11b19b1a5ef42e45d76.png" alt="I_r"/>. Consumers are allowed to offer the null set of isotopics as their
+<p>A request consists of a quantity, <span class="math">\(q_r\)</span>, and a target isotopic vector,
+<span class="math">\(I_r\)</span>. Consumers are allowed to offer the null set of isotopics as their
 profile, effectively providing no information. In general, a requester may have
 more than one request (nodes in Figure 1) per commodity. A prime example is a
 reactor that chooses to requests fuel assemblies, of which they request many.</p>
@@ -609,9 +610,9 @@ requests</li>
      <li><a href="http://fuelcycle.org/cyclus/api/">Cyclus API Documentation</a></li>
     <li><a href="http://fuelcycle.org/cycamore/api/">Cycamore API Documentation</a></li>
     <li><a href="/basics/glossary.html">Glossary</a></li>
-    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-users" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Users</a> mailing list.
-    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-dev" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Developers</a> mailing list.
     </ul></li></ul>
   </div>
@@ -628,7 +629,7 @@ requests</li>
 <script type="text/javascript">$('#searchbox').show(0);</script>
     <h3>Get Cyclus</h3>
     <br>
-    Current version: <b>1.5.0</b>
+    Current version: <b>1.5.3</b>
     <br><br>
     Install:
     <div class="highlight-bash" style="width:97.5%"><div class="highlight"><pre><span class="nv">$ </span>conda install cyclus cycamore</pre></div></div>
@@ -636,6 +637,8 @@ requests</li>
     <ul><li><ul>
           <li><a href="https://github.com/cyclus/cyclus">Cyclus</a></li>
           <li><a href="https://github.com/cyclus/cycamore">Cycamore</a></li>
+          <li><a href="https://github.com/cyclus/cymetric">Cymetric</a></li>
+          <li><a href="https://github.com/cyclus/rickshaw">Rickshaw</a></li>
     </ul></li></ul>
     <h3>Acknowledgements</h3>
     The Cyclus project has received support from:
@@ -655,7 +658,7 @@ requests</li>
     <a href="http://www.wisc.edu" target="_blank"><img src="../_static/crest.png" height=100px></a>
     <a href="http://www.anl.gov" target="_blank"><img src="../_static/nnsa.png" width=150px></a>
 
-    
+
 
         </div>
       </div>
@@ -704,7 +707,7 @@ requests</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Nov 20, 2017.
+      Last updated on Jan 12, 2018.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

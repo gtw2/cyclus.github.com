@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.1-736-g6a916971)',
+        VERSION:     '(1.5.3)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="../_static/cloud.base.js"></script>
     <script type="text/javascript" src="../_static/cloud.js"></script>
@@ -1180,7 +1181,7 @@ annotations dict.</p>
 
 <dl class="attribute">
 <dt id="cyclus.cycpp.PragmaCyclusErrorFilter.directives">
-<code class="descname">directives</code><em class="property"> = frozenset({'decl', 'var', 'impl', 'def', 'note', 'exec'})</em><a class="headerlink" href="#cyclus.cycpp.PragmaCyclusErrorFilter.directives" title="Permalink to this definition">¶</a></dt>
+<code class="descname">directives</code><em class="property"> = frozenset({'def', 'exec', 'impl', 'decl', 'var', 'note'})</em><a class="headerlink" href="#cyclus.cycpp.PragmaCyclusErrorFilter.directives" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1270,7 +1271,7 @@ In either case, this is followed by: for k, v in F.items(): D[k] = v</p>
 #pragma cyclus [def|decl|impl] schema [classname]</p>
 <dl class="attribute">
 <dt id="cyclus.cycpp.SchemaFilter.alltypes">
-<code class="descname">alltypes</code><em class="property"> = frozenset({'anySimpleType', 'long', 'byte', 'language', 'gMonth', 'base64Binary', 'token', 'int', 'NMTOKEN', 'Name', 'hexBinary', 'ID', 'gMonthDay', 'dateTime', 'nonPositiveInteger', 'nonNegativeInteger', 'gYear', 'unsignedInt', 'string', 'IDREFS', 'positiveInteger', 'boolean', 'decimal', 'anyURI', 'normalizedString', 'unsignedLong', 'integer', 'QName', 'IDREF', 'NOTATION', 'unsignedShort', 'NMTOKENS', 'double', 'time', 'ENTITY', 'float', 'anyType', 'duration', 'gDay', 'NCName', 'unsignedByte', 'short', 'negativeInteger', 'gYearMonth', 'date', 'ENTITIES'})</em><a class="headerlink" href="#cyclus.cycpp.SchemaFilter.alltypes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">alltypes</code><em class="property"> = frozenset({'gDay', 'ENTITY', 'IDREFS', 'short', 'nonPositiveInteger', 'ENTITIES', 'normalizedString', 'positiveInteger', 'unsignedShort', 'integer', 'token', 'NCName', 'string', 'anyURI', 'NMTOKENS', 'anyType', 'hexBinary', 'byte', 'duration', 'QName', 'double', 'anySimpleType', 'IDREF', 'Name', 'dateTime', 'int', 'unsignedLong', 'float', 'gYearMonth', 'nonNegativeInteger', 'unsignedInt', 'long', 'gMonthDay', 'base64Binary', 'gYear', 'time', 'gMonth', 'negativeInteger', 'unsignedByte', 'decimal', 'NMTOKEN', 'ID', 'boolean', 'NOTATION', 'language', 'date'})</em><a class="headerlink" href="#cyclus.cycpp.SchemaFilter.alltypes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1285,7 +1286,7 @@ In either case, this is followed by: for k, v in F.items(): D[k] = v</p>
 
 <dl class="attribute">
 <dt id="cyclus.cycpp.SchemaFilter.default_types">
-<code class="descname">default_types</code><em class="property"> = {'outrecipe': None, 'none': None, 'facility': None, 'range': None, 'double': 'double', 'prototype': None, 'commodity': None, 'bool': 'boolean', 'nuclide': 'string', 'float': 'float', '': None, 'recipe': None, 'int': 'int', 'inrecipe': None, 'cyclus::Blob': 'string', 'boost::uuids::uuid': 'token', 'combobox': None, 'outcommodity': None, None: None, 'incommodity': None, 'std::string': 'string'}</em><a class="headerlink" href="#cyclus.cycpp.SchemaFilter.default_types" title="Permalink to this definition">¶</a></dt>
+<code class="descname">default_types</code><em class="property"> = {'bool': 'boolean', 'std::string': 'string', 'int': 'int', 'float': 'float', 'double': 'double', 'cyclus::Blob': 'string', 'boost::uuids::uuid': 'token', 'nuclide': 'string', 'commodity': None, 'incommodity': None, 'outcommodity': None, 'range': None, 'combobox': None, 'facility': None, 'prototype': None, 'recipe': None, 'inrecipe': None, 'outrecipe': None, 'none': None, None: None, '': None}</em><a class="headerlink" href="#cyclus.cycpp.SchemaFilter.default_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1585,7 +1586,7 @@ The name argument here is provided for debugging &amp; reporting purposes.</p>
 
 <dl class="attribute">
 <dt id="cyclus.cycpp.StateAccumulator.known_templates">
-<code class="descname">known_templates</code><em class="property"> = {'cyclus::toolkit::ResBuf': ('T',), 'std::list': ('T',), 'std::pair': ('T1', 'T2'), 'std::vector': ('T',), 'cyclus::toolkit::ResMap': ('K', 'R'), 'std::map': ('Key', 'T'), 'std::set': ('T',)}</em><a class="headerlink" href="#cyclus.cycpp.StateAccumulator.known_templates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">known_templates</code><em class="property"> = {'cyclus::toolkit::ResBuf': ('T',), 'cyclus::toolkit::ResMap': ('K', 'R'), 'std::list': ('T',), 'std::map': ('Key', 'T'), 'std::pair': ('T1', 'T2'), 'std::set': ('T',), 'std::vector': ('T',)}</em><a class="headerlink" href="#cyclus.cycpp.StateAccumulator.known_templates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1595,7 +1596,7 @@ The name argument here is provided for debugging &amp; reporting purposes.</p>
 
 <dl class="attribute">
 <dt id="cyclus.cycpp.StateAccumulator.supported_types">
-<code class="descname">supported_types</code><em class="property"> = {('cyclus::toolkit::ResBuf', 'cyclus::Resource'), 'double', 'cyclus::Resource', 'bool', 'cyclus::toolkit::ResMap', 'float', 'cyclus::Material', 'cyclus::toolkit::ResourceBuff', 'cyclus::toolkit::ResBuf', 'int', ('cyclus::toolkit::ResBuf', 'cyclus::Product'), 'cyclus::Blob', 'cyclus::Product', 'boost::uuids::uuid', ('cyclus::toolkit::ResBuf', 'cyclus::Material'), 'std::string'}</em><a class="headerlink" href="#cyclus.cycpp.StateAccumulator.supported_types" title="Permalink to this definition">¶</a></dt>
+<code class="descname">supported_types</code><em class="property"> = {'int', 'cyclus::toolkit::ResMap', 'cyclus::Resource', 'cyclus::toolkit::ResBuf', 'cyclus::Product', ('cyclus::toolkit::ResBuf', 'cyclus::Product'), 'boost::uuids::uuid', 'cyclus::Material', 'bool', 'std::string', 'cyclus::toolkit::ResourceBuff', 'float', ('cyclus::toolkit::ResBuf', 'cyclus::Material'), 'double', 'cyclus::Blob', ('cyclus::toolkit::ResBuf', 'cyclus::Resource')}</em><a class="headerlink" href="#cyclus.cycpp.StateAccumulator.supported_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1958,9 +1959,9 @@ arguments.</p>
      <li><a href="http://fuelcycle.org/cyclus/api/">Cyclus API Documentation</a></li>
     <li><a href="http://fuelcycle.org/cycamore/api/">Cycamore API Documentation</a></li>
     <li><a href="/basics/glossary.html">Glossary</a></li>
-    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-users" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Users</a> mailing list.
-    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-dev" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Developers</a> mailing list.
     </ul></li></ul>
   </div>
@@ -1977,7 +1978,7 @@ arguments.</p>
 <script type="text/javascript">$('#searchbox').show(0);</script>
     <h3>Get Cyclus</h3>
     <br>
-    Current version: <b>1.5.0</b>
+    Current version: <b>1.5.3</b>
     <br><br>
     Install:
     <div class="highlight-bash" style="width:97.5%"><div class="highlight"><pre><span class="nv">$ </span>conda install cyclus cycamore</pre></div></div>
@@ -1985,6 +1986,8 @@ arguments.</p>
     <ul><li><ul>
           <li><a href="https://github.com/cyclus/cyclus">Cyclus</a></li>
           <li><a href="https://github.com/cyclus/cycamore">Cycamore</a></li>
+          <li><a href="https://github.com/cyclus/cymetric">Cymetric</a></li>
+          <li><a href="https://github.com/cyclus/rickshaw">Rickshaw</a></li>
     </ul></li></ul>
     <h3>Acknowledgements</h3>
     The Cyclus project has received support from:
@@ -2004,7 +2007,7 @@ arguments.</p>
     <a href="http://www.wisc.edu" target="_blank"><img src="../_static/crest.png" height=100px></a>
     <a href="http://www.anl.gov" target="_blank"><img src="../_static/nnsa.png" width=150px></a>
 
-    
+
 
         </div>
       </div>
@@ -2053,7 +2056,7 @@ arguments.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Nov 20, 2017.
+      Last updated on Jan 12, 2018.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

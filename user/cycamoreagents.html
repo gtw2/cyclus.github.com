@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.1-736-g6a916971)',
+        VERSION:     '(1.5.3)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="../_static/cloud.base.js"></script>
     <script type="text/javascript" src="../_static/cloud.js"></script>
@@ -497,9 +498,7 @@ specified commodities.</div></blockquote>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">label:</th><td class="field-body">Tails Assay</td>
-</tr>
-<tr class="field-even field"><th class="field-name">range:</th><td class="field-body">[0.0, 0.003]</td>
+<tr class="field-odd field"><th class="field-name">range:</th><td class="field-body">[0.0, 0.003]</td>
 </tr>
 </tbody>
 </table>
@@ -513,22 +512,6 @@ specified commodities.</div></blockquote>
 </div>
 <p><strong>Python:</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;tails_assay&quot;</span><span class="p">:</span> <span class="mf">0.003</span><span class="p">}</span>  <span class="c1"># double, optional</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">tails_assay_uncertainty:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=0.0), shape=[-1]</p>
-<p><strong>XML:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;tails_assay_uncertainty&gt;</span>[double]<span class="nt">&lt;/tails_assay_uncertainty&gt;</span>
-</pre></div>
-</div>
-<p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;tails_assay_uncertainty&quot;</span><span class="p p-Indicator">:</span> <span class="nv">0.0</span><span class="p p-Indicator">}</span>  <span class="c1"># double</span>
-</pre></div>
-</div>
-<p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;tails_assay_uncertainty&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}</span>  <span class="c1"># double, optional</span>
 </pre></div>
 </div>
 </td>
@@ -630,9 +613,7 @@ specified commodities.</div></blockquote>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">label:</th><td class="field-body">SWU Capacity</td>
-</tr>
-<tr class="field-even field"><th class="field-name">range:</th><td class="field-body">[0.0, 1e+299]</td>
+<tr class="field-odd field"><th class="field-name">range:</th><td class="field-body">[0.0, 1e+299]</td>
 </tr>
 </tbody>
 </table>
@@ -680,11 +661,6 @@ specified commodities.</div></blockquote>
     <span class="nt">&lt;/element&gt;</span>
     <span class="nt">&lt;optional&gt;</span>
         <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;tails_assay&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;double&quot;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;/element&gt;</span>
-    <span class="nt">&lt;/optional&gt;</span>
-    <span class="nt">&lt;optional&gt;</span>
-        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;tails_assay_uncertainty&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;double&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/element&gt;</span>
     <span class="nt">&lt;/optional&gt;</span>
@@ -1690,7 +1666,7 @@ specified commodities.</div></blockquote>
 </pre></div>
 </div>
 <p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;streams&quot;</span><span class="p">:</span> <span class="p">{</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;streams&quot;</span><span class="p">:</span> <span class="p">{</span>
   <span class="s2">&quot;item&quot;</span><span class="p">:</span> <span class="p">[{</span>
     <span class="s2">&quot;commod&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;info&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -1720,22 +1696,6 @@ specified commodities.</div></blockquote>
     <span class="p">},</span>
     <span class="o">...</span>
 <span class="p">]}}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">efficiency_uncertainty:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=0.0), shape=[-1]</p>
-<p><strong>XML:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;efficiency_uncertainty&gt;</span>[double]<span class="nt">&lt;/efficiency_uncertainty&gt;</span>
-</pre></div>
-</div>
-<p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;efficiency_uncertainty&quot;</span><span class="p p-Indicator">:</span> <span class="nv">0.0</span><span class="p p-Indicator">}</span>  <span class="c1"># double</span>
-</pre></div>
-</div>
-<p><strong>Python:</strong></p>
-<div class="last highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;efficiency_uncertainty&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}</span>  <span class="c1"># double, optional</span>
 </pre></div>
 </div>
 </td>
@@ -1827,11 +1787,6 @@ specified commodities.</div></blockquote>
             <span class="nt">&lt;/element&gt;</span>
         <span class="nt">&lt;/oneOrMore&gt;</span>
     <span class="nt">&lt;/element&gt;</span>
-    <span class="nt">&lt;optional&gt;</span>
-        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;efficiency_uncertainty&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;double&quot;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;/element&gt;</span>
-    <span class="nt">&lt;/optional&gt;</span>
 <span class="nt">&lt;/interleave&gt;</span>
 </pre></div>
 </div>
@@ -2412,23 +2367,7 @@ specified commodities.</div></blockquote>
 </div>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">residence_time_uncertainty:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=0), shape=[-1]</p>
-<p><strong>XML:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;residence_time_uncertainty&gt;</span>[double ( n.a. )]<span class="nt">&lt;/residence_time_uncertainty&gt;</span>
-</pre></div>
-</div>
-<p><strong>JSON:</strong></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&quot;residence_time_uncertainty&quot;</span><span class="p p-Indicator">:</span> <span class="nv">0</span><span class="p p-Indicator">}</span>  <span class="c1"># double, n.a.</span>
-</pre></div>
-</div>
-<p><strong>Python:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;residence_time_uncertainty&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>  <span class="c1"># double, n.a., optional</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">throughput:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=1e+299), shape=[-1]</p>
+<tr class="field-even field"><th class="field-name">throughput:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">double</span></code>, optional (default=1e+299), shape=[-1]</p>
 <p>the max amount that can be moved through the facility per timestep (kg)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2539,11 +2478,6 @@ specified commodities.</div></blockquote>
     <span class="nt">&lt;optional&gt;</span>
         <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;residence_time&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;int&quot;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;/element&gt;</span>
-    <span class="nt">&lt;/optional&gt;</span>
-    <span class="nt">&lt;optional&gt;</span>
-        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">&quot;residence_time_uncertainty&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;data</span> <span class="na">type=</span><span class="s">&quot;double&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/element&gt;</span>
     <span class="nt">&lt;/optional&gt;</span>
     <span class="nt">&lt;optional&gt;</span>
@@ -3070,7 +3004,7 @@ specified commodities.</div></blockquote>
 <p>Demand functions are defined as piecewise functions. Each piece must be provided a starting time and function description. Each function description is comprised of a function type and associated parameters.</p>
 <blockquote>
 <div><ul class="simple">
-<li>Start times are inclusive. For a start time <img class="math" src="../_images/math/1410bd3aa3d34373bc7de52c132b4fd6f154019a.png" alt="t_0"/>, the demand function is evaluated on <img class="math" src="../_images/math/6d04201bf687dd0cddc3612a1c3d812900d8705f.png" alt="[t_0, \infty)"/>.</li>
+<li>Start times are inclusive. For a start time <span class="math">\(t_0\)</span>, the demand function is evaluated on <span class="math">\([t_0, \infty)\)</span>.</li>
 <li>Supported function types are based on the <a class="reference external" href="http://fuelcycle.org/cyclus/api/classcyclus_1_1toolkit_1_1BasicFunctionFactory.html#a2f3806305d99a745ab57c300e54a603d">cyclus::toolkit::BasicFunctionFactory types</a>.</li>
 <li>The type name is the lower-case name of the function (e.g., ‘linear’, ‘exponential’, etc.).</li>
 <li>The parameters associated with each function type can be found on their respective documentation pages.</li>
@@ -3368,9 +3302,9 @@ specified commodities.</div></blockquote>
      <li><a href="http://fuelcycle.org/cyclus/api/">Cyclus API Documentation</a></li>
     <li><a href="http://fuelcycle.org/cycamore/api/">Cycamore API Documentation</a></li>
     <li><a href="/basics/glossary.html">Glossary</a></li>
-    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-users" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Users</a> mailing list.
-    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-dev" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Developers</a> mailing list.
     </ul></li></ul>
   </div>
@@ -3387,7 +3321,7 @@ specified commodities.</div></blockquote>
 <script type="text/javascript">$('#searchbox').show(0);</script>
     <h3>Get Cyclus</h3>
     <br>
-    Current version: <b>1.5.0</b>
+    Current version: <b>1.5.3</b>
     <br><br>
     Install:
     <div class="highlight-bash" style="width:97.5%"><div class="highlight"><pre><span class="nv">$ </span>conda install cyclus cycamore</pre></div></div>
@@ -3395,6 +3329,8 @@ specified commodities.</div></blockquote>
     <ul><li><ul>
           <li><a href="https://github.com/cyclus/cyclus">Cyclus</a></li>
           <li><a href="https://github.com/cyclus/cycamore">Cycamore</a></li>
+          <li><a href="https://github.com/cyclus/cymetric">Cymetric</a></li>
+          <li><a href="https://github.com/cyclus/rickshaw">Rickshaw</a></li>
     </ul></li></ul>
     <h3>Acknowledgements</h3>
     The Cyclus project has received support from:
@@ -3414,7 +3350,7 @@ specified commodities.</div></blockquote>
     <a href="http://www.wisc.edu" target="_blank"><img src="../_static/crest.png" height=100px></a>
     <a href="http://www.anl.gov" target="_blank"><img src="../_static/nnsa.png" width=150px></a>
 
-    
+
 
         </div>
       </div>
@@ -3463,7 +3399,7 @@ specified commodities.</div></blockquote>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Nov 20, 2017.
+      Last updated on Jan 12, 2018.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

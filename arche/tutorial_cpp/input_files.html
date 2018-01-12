@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '(1.5.1-736-g6a916971)',
+        VERSION:     '(1.5.3)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="../../_static/cloud.base.js"></script>
     <script type="text/javascript" src="../../_static/cloud.js"></script>
@@ -298,11 +299,11 @@ from <code class="docutils literal"><span class="pre">3</span></code> to <code c
 from the Source to Storage every time step. After the first time step, a unit of
 material was also sent from Storage to the Sink every time step, having been
 stored for the interim period.</p>
-<p>This consistent flow occurred because, given the storage time <img class="math" src="../../_images/math/2f8665a2cb06d035e069b6472a88989d912e41da.png" alt="t_s"/>,
-capacity <img class="math" src="../../_images/math/ae12a24f88803b5895632e4848d87d46483c492c.png" alt="c"/>, and throughput <img class="math" src="../../_images/math/557d5fad862c9046d26e1a930f45a550c146d592.png" alt="\tau"/>, the following relation is true</p>
+<p>This consistent flow occurred because, given the storage time <span class="math">\(t_s\)</span>,
+capacity <span class="math">\(c\)</span>, and throughput <span class="math">\(\tau\)</span>, the following relation is true</p>
 <div class="math">
-<p><img src="../../_images/math/51d8b431aafc0c12bd0afafa28836a7303928eb9.png" alt="t_s &lt; min(c, \tau)"/></p>
-</div><p>What happens when <img class="math" src="../../_images/math/c837b95069b16512f329e17a7d31684a0ef39ae6.png" alt="t_s &gt; min(c, \tau)"/>? Let’s find out!</p>
+\[t_s &lt; min(c, \tau)\]</div>
+<p>What happens when <span class="math">\(t_s &gt; min(c, \tau)\)</span>? Let’s find out!</p>
 <p>First, make a new input file</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> cp input/basic.xml input/interesting.xml
 </pre></div>
@@ -320,7 +321,7 @@ capacity <img class="math" src="../../_images/math/ae12a24f88803b5895632e4848d87
 <span class="nt">&lt;/config&gt;</span>
 </pre></div>
 </div>
-<p>Note that now we have <img class="math" src="../../_images/math/120ca60e0366995696fd4a76336f89f18eadbc2f.png" alt="t_s = 5"/> and <img class="math" src="../../_images/math/69153c04c5b0056c0b61c940360fa7bf9fbfe698.png" alt="c = 2"/>.</p>
+<p>Note that now we have <span class="math">\(t_s = 5\)</span> and <span class="math">\(c = 2\)</span>.</p>
 </div>
 <div class="section" id="run-the-interesting-file">
 <h2>Run the Interesting File<a class="headerlink" href="#run-the-interesting-file" title="Permalink to this headline">¶</a></h2>
@@ -402,9 +403,9 @@ dynamics of this scenario.</p>
      <li><a href="http://fuelcycle.org/cyclus/api/">Cyclus API Documentation</a></li>
     <li><a href="http://fuelcycle.org/cycamore/api/">Cycamore API Documentation</a></li>
     <li><a href="/basics/glossary.html">Glossary</a></li>
-    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-users" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Users</a> mailing list.
-    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-dev" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Developers</a> mailing list.
     </ul></li></ul>
   </div>
@@ -421,7 +422,7 @@ dynamics of this scenario.</p>
 <script type="text/javascript">$('#searchbox').show(0);</script>
     <h3>Get Cyclus</h3>
     <br>
-    Current version: <b>1.5.0</b>
+    Current version: <b>1.5.3</b>
     <br><br>
     Install:
     <div class="highlight-bash" style="width:97.5%"><div class="highlight"><pre><span class="nv">$ </span>conda install cyclus cycamore</pre></div></div>
@@ -429,6 +430,8 @@ dynamics of this scenario.</p>
     <ul><li><ul>
           <li><a href="https://github.com/cyclus/cyclus">Cyclus</a></li>
           <li><a href="https://github.com/cyclus/cycamore">Cycamore</a></li>
+          <li><a href="https://github.com/cyclus/cymetric">Cymetric</a></li>
+          <li><a href="https://github.com/cyclus/rickshaw">Rickshaw</a></li>
     </ul></li></ul>
     <h3>Acknowledgements</h3>
     The Cyclus project has received support from:
@@ -448,7 +451,7 @@ dynamics of this scenario.</p>
     <a href="http://www.wisc.edu" target="_blank"><img src="../../_static/crest.png" height=100px></a>
     <a href="http://www.anl.gov" target="_blank"><img src="../../_static/nnsa.png" width=150px></a>
 
-    
+
 
         </div>
       </div>
@@ -498,7 +501,7 @@ dynamics of this scenario.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Nov 20, 2017.
+      Last updated on Jan 12, 2018.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

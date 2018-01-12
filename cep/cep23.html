@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.1-736-g6a916971)',
+        VERSION:     '(1.5.3)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="../_static/cloud.base.js"></script>
     <script type="text/javascript" src="../_static/cloud.js"></script>
@@ -107,7 +108,7 @@ if(ga_enabled){
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
 <p>Cyclus is a discrete time simulator whose assumed default time step is
 months. Months are the worst unit ever. This proposal adds precision and
-flexibility to what we mean by <img class="math" src="../_images/math/d1d0c5bda433e26438f8a8dc129047eafde47723.png" alt="\delta t"/>. Namely, this CEP moves from
+flexibility to what we mean by <span class="math">\(\delta t\)</span>. Namely, this CEP moves from
 months to seconds and allows the user to set the time step length, preserving
 a default length of a Julian month.</p>
 </div>
@@ -117,7 +118,7 @@ a default length of a Julian month.</p>
 the seconds as the default time unit.  This allows agents to unambiguously
 communicate with each other and to determine their own time scales internally.
 This CEP also adds the capability for users to specify a time step length
-(<img class="math" src="../_images/math/d1d0c5bda433e26438f8a8dc129047eafde47723.png" alt="\delta t"/>) of their choosing. The default time step, if unspecified,
+(<span class="math">\(\delta t\)</span>) of their choosing. The default time step, if unspecified,
 will be a well-defined month, improving on the historically nebulous month.</p>
 <p>This CEP is motivated by our past woes with months.
 Months are an awful time step because there is no single definition for what a
@@ -132,15 +133,15 @@ or to have non-month days between years.</p>
 it is an even worse idea to implement a full Gregorian calendar. Like with
 time zones, the opportunities for failure are nearly endless. Furthermore,
 going with a real calendar breaks with the current notion that all time steps
-have an equal <img class="math" src="../_images/math/d1d0c5bda433e26438f8a8dc129047eafde47723.png" alt="\delta t"/>.</p>
+have an equal <span class="math">\(\delta t\)</span>.</p>
 </div>
 <div class="section" id="specification">
 <h2>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">¶</a></h2>
 <p>This CEP defines the default time step as the average length of a Julian
 month as measured in seconds, the proper unit for time:</p>
 <div class="math">
-<p><img src="../_images/math/8e98802356d488654c16da081679922649baf25c.png" alt="\delta t = \frac{365.25 [d]}{12} = \frac{31557600 [s]}{12} = 2629800 [s/m]"/></p>
-</div><p>Furthermore, this actual time step should be able to be set by the user in the
+\[\delta t = \frac{365.25 [d]}{12} = \frac{31557600 [s]}{12} = 2629800 [s/m]\]</div>
+<p>Furthermore, this actual time step should be able to be set by the user in the
 input file. The following changes to the master schema(s) are thus needed:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span>&lt;element name =&quot;control&quot;&gt;
   &lt;interleave&gt;
@@ -189,7 +190,7 @@ per prototype.</p>
 about actual real physical time and those which simply function per
 simulation time step.</p>
 <p>When an archetype uses real time, due to physics calculations or other needs,
-the archetype should now check that <img class="math" src="../_images/math/d1d0c5bda433e26438f8a8dc129047eafde47723.png" alt="\delta t"/> is within a valid range
+the archetype should now check that <span class="math">\(\delta t\)</span> is within a valid range
 that they define. This is because users will now be able to set the time step.
 This validation check maybe performed in any of the archetype’s member functions.
 If a static range is known ahead of time, then this check is most appropriate in
@@ -263,9 +264,9 @@ itself, there is no funny business here.</p>
      <li><a href="http://fuelcycle.org/cyclus/api/">Cyclus API Documentation</a></li>
     <li><a href="http://fuelcycle.org/cycamore/api/">Cycamore API Documentation</a></li>
     <li><a href="/basics/glossary.html">Glossary</a></li>
-    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-users" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Users</a> mailing list.
-    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-dev" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Developers</a> mailing list.
     </ul></li></ul>
   </div>
@@ -282,7 +283,7 @@ itself, there is no funny business here.</p>
 <script type="text/javascript">$('#searchbox').show(0);</script>
     <h3>Get Cyclus</h3>
     <br>
-    Current version: <b>1.5.0</b>
+    Current version: <b>1.5.3</b>
     <br><br>
     Install:
     <div class="highlight-bash" style="width:97.5%"><div class="highlight"><pre><span class="nv">$ </span>conda install cyclus cycamore</pre></div></div>
@@ -290,6 +291,8 @@ itself, there is no funny business here.</p>
     <ul><li><ul>
           <li><a href="https://github.com/cyclus/cyclus">Cyclus</a></li>
           <li><a href="https://github.com/cyclus/cycamore">Cycamore</a></li>
+          <li><a href="https://github.com/cyclus/cymetric">Cymetric</a></li>
+          <li><a href="https://github.com/cyclus/rickshaw">Rickshaw</a></li>
     </ul></li></ul>
     <h3>Acknowledgements</h3>
     The Cyclus project has received support from:
@@ -309,7 +312,7 @@ itself, there is no funny business here.</p>
     <a href="http://www.wisc.edu" target="_blank"><img src="../_static/crest.png" height=100px></a>
     <a href="http://www.anl.gov" target="_blank"><img src="../_static/nnsa.png" width=150px></a>
 
-    
+
 
         </div>
       </div>
@@ -358,7 +361,7 @@ itself, there is no funny business here.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Nov 20, 2017.
+      Last updated on Jan 12, 2018.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");

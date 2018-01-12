@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '(1.5.1-736-g6a916971)',
+        VERSION:     '(1.5.3)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="../_static/cloud.base.js"></script>
     <script type="text/javascript" src="../_static/cloud.js"></script>
@@ -86,7 +87,8 @@ project repository is located at <a class="reference external" href="http://gith
 projects found at <a class="reference external" href="http://github.com/cyclus">http://github.com/cyclus</a> include :</p>
 <ul class="simple">
 <li>Cycamore, the <span style="font-variant:small-caps;">Cyclus</span> additional module repository</li>
-<li>Cycic, the <span style="font-variant:small-caps;">Cyclus</span> input controller</li>
+<li>Cymetric, the <span style="font-variant:small-caps;">Cyclus</span> metrics calculator</li>
+<li>Rickshaw, the automated <span style="font-variant:small-caps;">Cyclus</span> driver</li>
 <li>and more to come.</li>
 </ul>
 <p>Although you do not have to register with GitHub to download and edit the
@@ -96,8 +98,7 @@ account and submit ‘Pull Requests’</em>. <a class="reference internal" href=
 building cyclus.</span></a></p>
 <div class="section" id="working-on-a-topic">
 <h2>Working on a Topic<a class="headerlink" href="#working-on-a-topic" title="Permalink to this headline">¶</a></h2>
-<p><em>Note that “upstream” repository refers to the primary `cyclus/cyclus`
-repository.</em></p>
+<p><em>Note that “upstream” repository refers to the primary `cyclus/cyclus` repository.</em></p>
 <p>You may find or create an issue report in a <span style="font-variant:small-caps;">Cyclus</span> repository that you would
 like to solve.</p>
 <p>You’ll first need to fork your repository and create a branch for the topic
@@ -118,8 +119,7 @@ possible exception to this.</p>
 </div>
 <div class="section" id="keeping-your-fork-up-to-date">
 <h2>Keeping Your Fork Up To Date<a class="headerlink" href="#keeping-your-fork-up-to-date" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul>
+<ul>
 <li><p class="first">Use a branching workflow similar to the one described at
 <a class="reference external" href="http://progit.org/book/ch3-4.html">http://progit.org/book/ch3-4.html</a>.</p>
 </li>
@@ -155,14 +155,13 @@ history.  <em>Please see caution about rebasing below</em>.  For example:</p>
 </div>
 </li>
 </ul>
-</div></blockquote>
 </div>
 <div class="section" id="passing-tests">
 <h2>Passing Tests<a class="headerlink" href="#passing-tests" title="Permalink to this headline">¶</a></h2>
 <p>To check that your branch passes the tests, you must build and install your topic
 branch and then run the tests built during that process.</p>
 <p>For the <span style="font-variant:small-caps;">Cyclus</span> core, the tests are run using the CyclusUnitTestDriver (at
-the moment, <code class="docutils literal"><span class="pre">`make</span> <span class="pre">test`</span></code> is insufficient). For example</p>
+the moment, <code class="docutils literal"><span class="pre">`make</span> <span class="pre">test`</span></code> is insufficient). For example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build</span>
 <span class="n">mkdir</span> <span class="n">install</span>
 <span class="n">cd</span> <span class="n">build</span>
@@ -212,6 +211,31 @@ accordingly. The pull request will be updated with those changes when you push
 them to your fork.  When you think your request is ready for another review,
 you can reopen the review yourself with the button made available to you.</p>
 </div>
+<div class="section" id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
+<p>Pull requests will often have CHANGELOG entries associated with. However,
+to avoid excessive merge conflicts, please follow the following procedure:</p>
+<ol class="arabic">
+<li><p class="first">Go into the <code class="docutils literal"><span class="pre">news/</span></code> directory,</p>
+</li>
+<li><p class="first">Copy the <code class="docutils literal"><span class="pre">TEMPLATE.rst</span></code> file to another file in the <code class="docutils literal"><span class="pre">news/</span></code> directory.
+We suggest using the branchname:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cp TEMPLATE.rst branch.rst
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add your entries as a bullet pointed lists in your <code class="docutils literal"><span class="pre">branch.rst</span></code> file in
+the appropriate category. It is OK to leave the <code class="docutils literal"><span class="pre">None</span></code> entries for later
+use.</p>
+</li>
+<li><p class="first">Commit your <code class="docutils literal"><span class="pre">branch.rst</span></code>.</p>
+</li>
+</ol>
+<p>Feel free to update this file whenever you want! Please don’t use someone
+else’s file name. All of the files in this <code class="docutils literal"><span class="pre">news/</span></code> directory will be merged
+automatically at release time.  The <code class="docutils literal"><span class="pre">None</span></code> entries will be automatically
+filtered out too!</p>
+</div>
 <div class="section" id="reviewing-a-pull-request">
 <h2>Reviewing a Pull Request<a class="headerlink" href="#reviewing-a-pull-request" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -251,22 +275,6 @@ command line, make sure your merge is a non-fast-forward merge. For example:</p>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="keeping-cyclus-stable">
-<h2>Keeping Cyclus Stable<a class="headerlink" href="#keeping-cyclus-stable" title="Permalink to this headline">¶</a></h2>
-<p>A goal of cyclus is to keep the API stable for every major version.
-If you ever need to check whether the curent cyclus is stable or not
-simply go into the release directory and run the following command.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> cyclus/release
-$ ./smbchk.py --update -t HEAD --no-save --check
-</pre></div>
-</div>
-<p>If cyclus is stable, it will tell you so. If cyclus is not stable
-it will print a diff that lets you know where the instabilities lie.
-These are given by the minuses (-) of the diff.  Stability in this
-context means that it is OK to add things to the API, but not remove
-them.  For various reasons as documented in the tool itself, this
-is only availble on posix platforms.</p>
-</div>
 <div class="section" id="see-also">
 <h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p>A good description of a git workflow with good graphics is available at
@@ -290,8 +298,8 @@ is only availble on posix platforms.</p>
 <li><a class="reference internal" href="#keeping-your-fork-up-to-date">Keeping Your Fork Up To Date</a></li>
 <li><a class="reference internal" href="#passing-tests">Passing Tests</a></li>
 <li><a class="reference internal" href="#making-a-pull-request">Making a Pull Request</a></li>
+<li><a class="reference internal" href="#changelog">Changelog</a></li>
 <li><a class="reference internal" href="#reviewing-a-pull-request">Reviewing a Pull Request</a></li>
-<li><a class="reference internal" href="#keeping-cyclus-stable">Keeping Cyclus Stable</a></li>
 <li><a class="reference internal" href="#see-also">See also</a></li>
 </ul>
 </li>
@@ -319,9 +327,9 @@ is only availble on posix platforms.</p>
      <li><a href="http://fuelcycle.org/cyclus/api/">Cyclus API Documentation</a></li>
     <li><a href="http://fuelcycle.org/cycamore/api/">Cycamore API Documentation</a></li>
     <li><a href="/basics/glossary.html">Glossary</a></li>
-    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-users+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-users" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Users</a> mailing list.
-    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the 
+    <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-dev" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Developers</a> mailing list.
     </ul></li></ul>
   </div>
@@ -338,7 +346,7 @@ is only availble on posix platforms.</p>
 <script type="text/javascript">$('#searchbox').show(0);</script>
     <h3>Get Cyclus</h3>
     <br>
-    Current version: <b>1.5.0</b>
+    Current version: <b>1.5.3</b>
     <br><br>
     Install:
     <div class="highlight-bash" style="width:97.5%"><div class="highlight"><pre><span class="nv">$ </span>conda install cyclus cycamore</pre></div></div>
@@ -346,6 +354,8 @@ is only availble on posix platforms.</p>
     <ul><li><ul>
           <li><a href="https://github.com/cyclus/cyclus">Cyclus</a></li>
           <li><a href="https://github.com/cyclus/cycamore">Cycamore</a></li>
+          <li><a href="https://github.com/cyclus/cymetric">Cymetric</a></li>
+          <li><a href="https://github.com/cyclus/rickshaw">Rickshaw</a></li>
     </ul></li></ul>
     <h3>Acknowledgements</h3>
     The Cyclus project has received support from:
@@ -365,7 +375,7 @@ is only availble on posix platforms.</p>
     <a href="http://www.wisc.edu" target="_blank"><img src="../_static/crest.png" height=100px></a>
     <a href="http://www.anl.gov" target="_blank"><img src="../_static/nnsa.png" width=150px></a>
 
-    
+
 
         </div>
       </div>
@@ -414,7 +424,7 @@ is only availble on posix platforms.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Nov 20, 2017.
+      Last updated on Jan 12, 2018.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");
