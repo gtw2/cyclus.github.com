@@ -1,20 +1,23 @@
 
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>Setup a New Project &#8212; Home</title>
+    
     <link rel="stylesheet" href="../../_static/cyclus.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '(1.5.3)',
+        VERSION:     '(999999.999999)',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -24,9 +27,8 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/jquery.cookie.js"></script>
-    <script type="text/javascript" src="../../_static/cloud.base.js"></script>
     <script type="text/javascript" src="../../_static/cloud.js"></script>
     <link rel="shortcut icon" href="../../_static/big_c.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -49,7 +51,7 @@ if(ga_enabled){
 }
 </script>
   </head>
-  <body>
+  <body role="document">
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -91,7 +93,7 @@ if(ga_enabled){
 </ol>
 <div class="section" id="make-a-new-project">
 <h2>Make a New Project<a class="headerlink" href="#make-a-new-project" title="Permalink to this headline">¶</a></h2>
-<p>First let’s start by making a tutorial example project with an <code class="docutils literal"><span class="pre">agents.py</span></code> file.</p>
+<p>First let&#8217;s start by making a tutorial example project with an <code class="docutils literal"><span class="pre">agents.py</span></code> file.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">~ $ mkdir -p tutorial/tut</span>
 <span class="go">~ $ cd tutorial/tut</span>
 <span class="go">~/tuorial/tut $ touch __init__.py agents.py</span>
@@ -116,7 +118,7 @@ if(ga_enabled){
 </div>
 <div class="section" id="install-and-test">
 <h2>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">¶</a></h2>
-<p>To install the tutorial project, we’ll need to have a <code class="docutils literal"><span class="pre">setup.py</span></code> file in the
+<p>To install the tutorial project, we&#8217;ll need to have a <code class="docutils literal"><span class="pre">setup.py</span></code> file in the
 root tutorial directory. Create one that looks like:</p>
 <p><strong>~/tutorial/setup.py:</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
@@ -144,7 +146,7 @@ root tutorial directory. Create one that looks like:</p>
 <span class="go">~/tutorial $ python setup.py install --user</span>
 </pre></div>
 </div>
-<p>Let’s now make an exmaple input file in a special <code class="docutils literal"><span class="pre">input</span></code> directory:</p>
+<p>Let&#8217;s now make an exmaple input file in a special <code class="docutils literal"><span class="pre">input</span></code> directory:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">~ $ cd tutorial</span>
 <span class="go">~/tutorial $ mkdir -p input</span>
 <span class="go">~/tutorial $ touch input/storage.py</span>
@@ -243,7 +245,7 @@ root tutorial directory. Create one that looks like:</p>
         <div class="sphinxsidebarwrapper">
         <p class="logo"><a href="../../index.html" title="index">
           <img class="logo" src="../../_static/big_c.png" alt="Logo"/>
-        </a></p><div class="sphinx-toc sphinxlocaltoc">
+        </a></p><div class="sphinxlocaltoc">
     <h3><a href="../../index.html">Page contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Setup a New Project</a><ul>
@@ -280,6 +282,7 @@ root tutorial directory. Create one that looks like:</p>
       <a href="https://groups.google.com/forum/#!forum/cyclus-users" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Users</a> mailing list.
     <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-dev" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Developers</a> mailing list.
+    <li><a href="dev-call.fuelcycle.org" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Developers Hangout Link</a>
     </ul></li></ul>
   </div>
     
@@ -328,23 +331,6 @@ root tutorial directory. Create one that looks like:</p>
 
         </div>
       </div>
-    
-    
-        <div class="sidebar-toggle-group no-js">
-            
-            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
-                 «
-                <span class="show-for-small">hide menu</span>
-                
-            </button>
-            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
-                
-                <span class="show-for-small">menu</span>
-                <span class="hide-for-small">sidebar</span>
-                 »
-            </button>
-        </div>
-    
       <div class="clearer"></div>
     </div>
     <div class="relbar-bottom">
@@ -374,7 +360,7 @@ root tutorial directory. Create one that looks like:</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2012-2016, University of Wisconsin Computational Nuclear Engineering Research Group.
-      Last updated on Jan 12, 2018.
+      Last updated on Mar 09, 2018.
     </div><script type="text/javascript">
     if(ga_enabled){
         document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");
