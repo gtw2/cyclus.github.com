@@ -1183,7 +1183,7 @@ annotations dict.</p>
 
 <dl class="attribute">
 <dt id="cyclus.cycpp.PragmaCyclusErrorFilter.directives">
-<code class="descname">directives</code><em class="property"> = frozenset({'impl', 'exec', 'def', 'var', 'note', 'decl'})</em><a class="headerlink" href="#cyclus.cycpp.PragmaCyclusErrorFilter.directives" title="Permalink to this definition">¶</a></dt>
+<code class="descname">directives</code><em class="property"> = frozenset({'def', 'note', 'var', 'impl', 'decl', 'exec'})</em><a class="headerlink" href="#cyclus.cycpp.PragmaCyclusErrorFilter.directives" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1273,7 +1273,7 @@ In either case, this is followed by: for k, v in F.items(): D[k] = v</p>
 #pragma cyclus [def|decl|impl] schema [classname]</p>
 <dl class="attribute">
 <dt id="cyclus.cycpp.SchemaFilter.alltypes">
-<code class="descname">alltypes</code><em class="property"> = frozenset({'unsignedLong', 'byte', 'decimal', 'normalizedString', 'gYear', 'NMTOKEN', 'gMonth', 'duration', 'integer', 'hexBinary', 'IDREF', 'NOTATION', 'negativeInteger', 'unsignedShort', 'NCName', 'QName', 'unsignedInt', 'gYearMonth', 'anyURI', 'gMonthDay', 'time', 'dateTime', 'double', 'language', 'gDay', 'positiveInteger', 'ID', 'nonPositiveInteger', 'boolean', 'ENTITY', 'NMTOKENS', 'short', 'nonNegativeInteger', 'unsignedByte', 'string', 'anySimpleType', 'int', 'token', 'long', 'Name', 'base64Binary', 'float', 'date', 'IDREFS', 'ENTITIES', 'anyType'})</em><a class="headerlink" href="#cyclus.cycpp.SchemaFilter.alltypes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">alltypes</code><em class="property"> = frozenset({'dateTime', 'gYearMonth', 'IDREFS', 'negativeInteger', 'unsignedInt', 'long', 'anySimpleType', 'language', 'gYear', 'unsignedShort', 'normalizedString', 'integer', 'QName', 'short', 'IDREF', 'byte', 'time', 'anyType', 'ENTITIES', 'gMonth', 'NOTATION', 'gMonthDay', 'ENTITY', 'string', 'NMTOKEN', 'anyURI', 'base64Binary', 'NCName', 'double', 'nonNegativeInteger', 'unsignedLong', 'gDay', 'int', 'Name', 'duration', 'unsignedByte', 'decimal', 'boolean', 'float', 'nonPositiveInteger', 'NMTOKENS', 'hexBinary', 'ID', 'token', 'positiveInteger', 'date'})</em><a class="headerlink" href="#cyclus.cycpp.SchemaFilter.alltypes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1288,7 +1288,7 @@ In either case, this is followed by: for k, v in F.items(): D[k] = v</p>
 
 <dl class="attribute">
 <dt id="cyclus.cycpp.SchemaFilter.default_types">
-<code class="descname">default_types</code><em class="property"> = {'int': 'int', 'outcommodity': None, None: None, '': None, 'combobox': None, 'none': None, 'inrecipe': None, 'prototype': None, 'recipe': None, 'cyclus::Blob': 'string', 'std::string': 'string', 'facility': None, 'incommodity': None, 'float': 'float', 'range': None, 'bool': 'boolean', 'double': 'double', 'commodity': None, 'boost::uuids::uuid': 'token', 'outrecipe': None, 'nuclide': 'string'}</em><a class="headerlink" href="#cyclus.cycpp.SchemaFilter.default_types" title="Permalink to this definition">¶</a></dt>
+<code class="descname">default_types</code><em class="property"> = {'': None, 'float': 'float', None: None, 'prototype': None, 'incommodity': None, 'double': 'double', 'none': None, 'commodity': None, 'facility': None, 'boost::uuids::uuid': 'token', 'outcommodity': None, 'std::string': 'string', 'combobox': None, 'cyclus::Blob': 'string', 'int': 'int', 'inrecipe': None, 'bool': 'boolean', 'range': None, 'outrecipe': None, 'recipe': None, 'nuclide': 'string'}</em><a class="headerlink" href="#cyclus.cycpp.SchemaFilter.default_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1588,7 +1588,7 @@ The name argument here is provided for debugging &amp; reporting purposes.</p>
 
 <dl class="attribute">
 <dt id="cyclus.cycpp.StateAccumulator.known_templates">
-<code class="descname">known_templates</code><em class="property"> = {'std::vector': ('T',), 'std::map': ('Key', 'T'), 'cyclus::toolkit::ResBuf': ('T',), 'std::pair': ('T1', 'T2'), 'std::list': ('T',), 'std::set': ('T',), 'cyclus::toolkit::ResMap': ('K', 'R')}</em><a class="headerlink" href="#cyclus.cycpp.StateAccumulator.known_templates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">known_templates</code><em class="property"> = {'cyclus::toolkit::ResBuf': ('T',), 'std::vector': ('T',), 'std::map': ('Key', 'T'), 'std::pair': ('T1', 'T2'), 'cyclus::toolkit::ResMap': ('K', 'R'), 'std::list': ('T',), 'std::set': ('T',)}</em><a class="headerlink" href="#cyclus.cycpp.StateAccumulator.known_templates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1598,7 +1598,7 @@ The name argument here is provided for debugging &amp; reporting purposes.</p>
 
 <dl class="attribute">
 <dt id="cyclus.cycpp.StateAccumulator.supported_types">
-<code class="descname">supported_types</code><em class="property"> = {'int', ('cyclus::toolkit::ResBuf', 'cyclus::Material'), 'cyclus::Resource', 'cyclus::toolkit::ResBuf', ('cyclus::toolkit::ResBuf', 'cyclus::Product'), 'cyclus::Material', ('cyclus::toolkit::ResBuf', 'cyclus::Resource'), 'cyclus::Blob', 'std::string', 'cyclus::toolkit::ResourceBuff', 'cyclus::Product', 'float', 'bool', 'double', 'boost::uuids::uuid', 'cyclus::toolkit::ResMap'}</em><a class="headerlink" href="#cyclus.cycpp.StateAccumulator.supported_types" title="Permalink to this definition">¶</a></dt>
+<code class="descname">supported_types</code><em class="property"> = {'cyclus::Resource', 'float', ('cyclus::toolkit::ResBuf', 'cyclus::Product'), 'cyclus::toolkit::ResBuf', 'cyclus::Material', 'double', 'boost::uuids::uuid', 'std::string', ('cyclus::toolkit::ResBuf', 'cyclus::Material'), 'int', ('cyclus::toolkit::ResBuf', 'cyclus::Resource'), 'cyclus::Blob', 'bool', 'cyclus::Product', 'cyclus::toolkit::ResMap', 'cyclus::toolkit::ResourceBuff'}</em><a class="headerlink" href="#cyclus.cycpp.StateAccumulator.supported_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1965,7 +1965,7 @@ arguments.</p>
       <a href="https://groups.google.com/forum/#!forum/cyclus-users" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Users</a> mailing list.
     <li><a href="mailto:cyclus-dev+subscribe@googlegroups.com?subject=Subscribe&body=Send this message to subscribe to the list">Join</a> the
       <a href="https://groups.google.com/forum/#!forum/cyclus-dev" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Developers</a> mailing list.
-    <li><a href="dev-call.fuelcycle.org" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Developers Hangout Link</a>
+    <li><a href="http://dev-call.fuelcycle.org" target="_blank"><span style="font-variant:small-caps">Cyclus</span> Developers Hangout Link</a>
     </ul></li></ul>
   </div>
     
